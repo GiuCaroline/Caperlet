@@ -37,14 +37,14 @@ function Home() {
 
             <div className="flex flex-row gap-x-[1rem] items-center mt-25">
               <p className="text-(--c6) text-[1.5rem] cursor-default">01/03</p>
-              <span className="flex items-center p-5 bg-black opacity-[80%]
-            text-white rounded-4xl cursor-pointer">
-              <ChevronLeft className="text-(--c7)" size={28}/>
-            </span>
-              <span className="flex items-center p-5 bg-black opacity-[80%]
-            text-white rounded-4xl cursor-pointer">
-              <ChevronRight className="text-(--c7)" size={28}/>
-            </span>
+              <button className="flex items-center p-4 bg-black opacity-[80%]
+              text-white rounded-full cursor-pointer">
+                <ChevronLeft className="text-(--c7)" size={28}/>
+              </button>
+              <button className="flex items-center p-4 bg-black opacity-[80%]
+              text-white rounded-full cursor-pointer">
+                <ChevronRight className="text-(--c7)" size={28}/>
+              </button>
             </div>
           </div>
           

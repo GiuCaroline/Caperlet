@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import Login from "./pages/Login.jsx"
 import Cadastro from "./pages/Cadastro.jsx"
 import LojaPadrao from "./pages/LojaPadrao.jsx"
+import Customizado from "./pages/Customizado.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/loja" element={<LojaPadrao />} />
+        <Route path="/customizado" element={<Customizado />} />
       </Routes>
     </Router>
   );
