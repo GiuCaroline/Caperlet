@@ -1,17 +1,18 @@
 import '../assets/styles/App.css'
 import Nav from '../components/Nav.jsx'
-import { Star } from "lucide-react";
-import { ShoppingBag } from "lucide-react";
+import { Star } from "lucide-react"
+import { ShoppingBag } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 
 function Home() {
     return(
       <div className="min-h-screen bg-linear-to-br from-(--c1) from-50% to-(--c2) flex flex-col montserrat-f">
         <Nav />
         
-        <main className="flex-1 flex  flex-row items-start justify-between p-6">
+        <main className="flex-1 flex flex-row items-start justify-between p-6">
           <div className="p-[7rem] flex flex-col">
-            <span className="flex items-center text-lg px-6 mb-6 w-[15rem] py-1.5 bg-(--c4) 
-            text-white rounded-3xl cursor-default gap-x-[0.5rem]">
+            <span className="justify-center flex items-center text-lg px-6 mb-6 w-[15rem] py-1.5 bg-(--c4) 
+            text-white rounded-3xl cursor-default gap-x-[1rem]">
               <Star className="w-5.5 stroke-white fill-white" />
               Robusto e ousado
             </span>
@@ -22,7 +23,7 @@ function Home() {
               Massa de chocolate suíço meio amargo, finalizado com um chocolate francês em pó.
             </p>
 
-            <div className="flex flex-row gap-x-[3rem]">
+            <div className="flex flex-row gap-x-[3rem] mt-20">
               <p className="text-(--c4) mt-5 text-3xl font-bold max-w-2xl">
                 <span className="underline cursor-default">R$15,00/unidade</span><br/>
                 <span className="underline cursor-default text-white font-extralight text-lg">Ou comprar o </span><span className="cursor-pointer underline text-lg font-extralight">pacote fechado</span>
@@ -33,9 +34,21 @@ function Home() {
                   Por no carrinho
               </button>
             </div>
+
+            <div className="flex flex-row gap-x-[1rem] items-center mt-25">
+              <p className="text-(--c6) text-[1.5rem] cursor-default">01/03</p>
+              <span className="flex items-center p-5 bg-black opacity-[80%]
+            text-white rounded-4xl cursor-pointer">
+              <ChevronLeft className="text-(--c7)" size={28}/>
+            </span>
+              <span className="flex items-center p-5 bg-black opacity-[80%]
+            text-white rounded-4xl cursor-pointer">
+              <ChevronRight className="text-(--c7)" size={28}/>
+            </span>
+            </div>
           </div>
           
-          <div className="px-[6rem] mb-10 flex justify-center">
+          <div className="px-[6rem] flex justify-center">
             <img 
               src="/images/BrigadeiroHome.png" 
               alt="Brigadeiro meio amargo" 
