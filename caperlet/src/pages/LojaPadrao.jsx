@@ -5,9 +5,7 @@ import { Sparkle } from "phosphor-react"
 
 function LojaPadrao() {
     return(
-      <div className="min-h-screen flex flex-col montserrat-f">
-        <Nav />
-        
+      <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
             <section className="flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-[100%]">
                 <div className="flex flex-row gap-x-[2rem]">
@@ -16,7 +14,7 @@ function LojaPadrao() {
                     <Sparkle size={25} weight="fill"/>
                     Padrão gourmet
                     </span>
-                    <span className="flex items-center justify-center text-base px-6 py-1.5 bg-[rgba(152,92,240,0.1)]
+                    <span onClick={()=>{window.location="/customizado"}} className="flex items-center justify-center text-base px-6 py-1.5 bg-[rgba(152,92,240,0.1)]
                     text-(--c8) rounded-3xl cursor-pointer gap-x-[0.5rem] font-medium">
                     <Sparkle size={25} weight="fill"/>
                     Customizados

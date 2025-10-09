@@ -2,6 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css'
+import Nav from './components/Nav.jsx'
+import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Login from "./pages/Login.jsx"
 import Cadastro from "./pages/Cadastro.jsx"
@@ -16,6 +18,7 @@ createRoot(document.getElementById('root')).render(
 function App() {
   return (
     <Router>
+      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Nav/>}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -23,6 +26,7 @@ function App() {
         <Route path="/loja" element={<LojaPadrao />} />
         <Route path="/customizado" element={<Customizado />} />
       </Routes>
+      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Footer/>}
     </Router>
   );
 }

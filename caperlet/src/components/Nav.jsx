@@ -1,6 +1,7 @@
 import '../assets/styles/App.css'
 import { Sun, LogIn } from "lucide-react"
 import { Handbag } from "phosphor-react"
+import { href } from 'react-router-dom'
 
 function Nav() {
     return(
@@ -10,14 +11,14 @@ function Nav() {
           <span className="text-white">PERLET</span>
         </h1>
         <div className="text-white flex items-center px-[17rem] text-[1.2rem] list-none gap-x-[5rem]">
-          <li className="cursor-pointer">Home</li>
-          <li className="cursor-pointer">Loja</li>
-          <li className="cursor-pointer">Sobre nós</li>
-          <li className="cursor-pointer">Contato</li>
+          <li className="cursor-pointer"><a href="/">Home</a></li>
+          <li className="cursor-pointer"><a href="/loja">Loja</a></li>
+          <li className="cursor-pointer"><a href="">Sobre nós</a></li>
+          <li className="cursor-pointer"><a href="#footer">Contato</a></li>
         </div>
         <div className="flex gap-x-[1rem] items-center">
           <Sun size={23} className="text-white cursor-pointer"/>
-          <button className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
+          <button onClick={()=>{window.location="/login"}} className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
             <LogIn className="text-(--c4) w-8"/>
             Login
           </button>

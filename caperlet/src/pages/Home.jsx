@@ -7,8 +7,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 function Home() {
     return(
       <div className="min-h-screen bg-linear-to-br from-(--c1) from-50% to-(--c2) flex flex-col montserrat-f">
-        <Nav />
-        
         <main className="flex-1 flex flex-row items-start justify-between p-6">
           <div className="p-[7rem] flex flex-col">
             <span className="justify-center flex items-center text-lg px-6 mb-6 w-[15rem] py-1.5 bg-(--c4) 
