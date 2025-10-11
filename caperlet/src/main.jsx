@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx"
 import Cadastro from "./pages/Cadastro.jsx"
 import LojaPadrao from "./pages/LojaPadrao.jsx"
 import Customizado from "./pages/Customizado.jsx"
+import Customizado3 from './pages/Customizado3.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/loja" element={<LojaPadrao />} />
         <Route path="/customizado" element={<Customizado />} />
+        <Route path="/customizadoColoracao" element={<Customizado3 />} />
       </Routes>
       {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Footer/>}
     </Router>

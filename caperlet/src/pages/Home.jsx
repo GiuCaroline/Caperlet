@@ -55,10 +55,6 @@ function Home() {
             <div className="absolute bottom-[-13rem] right-50 w-[1px] h-[80px] bg-(--c1)"></div>
           </div>
         </main>
-
-        <footer className="bg-white text-gray-500 text-sm text-center p-4">
-          © 2025 - Feito por Giulia e Muchas💻
-        </footer>
       </div>
     )
 }
