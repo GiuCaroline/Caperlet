@@ -3,7 +3,7 @@ import { Plus, Minus } from "lucide-react"
 import { Sparkle } from "phosphor-react"
 import CaminhoCustom from '../components/CaminhoCustom.jsx'
 
-function Customizado3() {
+function Customizado4() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
@@ -30,96 +30,53 @@ function Customizado3() {
             <section className="bg-(--c3) p-15 flex w-[100%]">
               <div className='w-[50%]'>
                 <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-[45rem]">
-                  <h1 class="text-4xl font-bold mb-6 text-white text-left cursor-default">Escolha até 2 cores</h1>
+                  <h1 class="text-4xl font-bold mb-6 text-white text-left cursor-default">Customize o(s) pacote(s)</h1>
 
-                  <div class="grid grid-cols-2 gap-6">
-                    <div className='border-2 p-5 rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <div
-                        class="relative bg-[#8B00FF] h-[120px] cursor-pointer rounded-2xl border-4 border-transparent"
-                      ></div>
-                    </div>
+                  <h2 className='text-white font-bold text-base mt-5 cursor-default'>Tamanho do pacote</h2>
 
-                    <div className='border-4 p-5 rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c7)
-                    hover:scale-105 transition-all duration-300'>
-                      <div
-                        class="relative bg-[#4EEDB2] h-[120px] cursor-pointer
-                        rounded-2xl"
-                      >
-                        <div
-                          class="absolute top-2 right-2 w-4 h-4 rounded-full bg-(--c7) border-4 border-(--c12)"
-                        ></div>
-                      </div>
-                    </div>
+                  <div className='flex gap-3 justify-center mt-[2%]'>
+                    
+                    <button className='cursor-pointer text-white bg-[rgba(53,41,22,0.2)]
+                    rounded-xl border border-(--c12) px-14 py-5 flex flex-col items-center justify-center font-bold
+                    hover:scale-105 transition-all duration-200 whitespace-normal text-center'>
+                      <span className="text-white text-base leading-none">8 unidades</span>
+                      <span className="text-(--c18) text-sm font-medium mt-1">+ R$00,00</span>
+                    </button>
 
-                    <div className='border-2 p-5 rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <div
-                        class="relative bg-[#FFEB3B] h-[120px] cursor-pointer rounded-2xl 
-                        border-4 border-transparent"
-                      ></div>
-                    </div>
+                    <button className='cursor-pointer text-white bg-[rgba(53,41,22,0.2)]
+                    rounded-xl border border-(--c12) px-14 py-3 flex flex-col items-center justify-center font-bold
+                    hover:scale-105 transition-all duration-200 whitespace-normal text-center'>
+                      <span className="text-white text-base leading-none">12 unidades</span>
+                      <span className="text-(--c18) text-sm font-medium mt-1">+ R$38,00</span>
+                    </button>
 
-                    <div className='border-2 p-5 rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <div
-                        class="relative bg-[#E91E63] h-[120px] cursor-pointer rounded-2xl 
-                        border-4 border-transparent"
-                      ></div>
-                    </div>
+                    <button className='cursor-pointer text-white  bg-[rgba(53,41,22)]
+                    rounded-xl border border-(--c12) px-14 py-3 flex flex-col items-center justify-center font-bold
+                    hover:scale-105 transition-all duration-200 whitespace-normal text-center
+                    '>
+                      <span className="text-white text-base leading-none">16 unidades</span>
+                      <span className="text-(--c18) text-sm font-medium mt-1">+ R$86,00</span>
+                    </button>
                   </div>
 
-                  <p class="mt-6 text-sm text-white text-left cursor-default">
-                    1 de 2 cores selecionadas
-                  </p>
-                </div>
-                <div className='p-8 rounded-xl border border-(--c12) bg-transparent w-[45rem] mt-5'>
-                  <h1 class="text-4xl font-bold mb-6 text-white text-left cursor-default">Selecione até 2 detalhes</h1>
+                  <h2 className='text-white font-bold text-base mt-5 cursor-default'>Mensagem personalizada</h2>
+                  <textarea
+                    className="mt-3 bg-[rgba(0,0,0,0.5)] text-white p-4 w-full h-[7rem] rounded-xl border border-(--c12) outline-none resize-none"
+                    placeholder="Diga algo que precisamos saber sobre seu doce para torná-lo ainda mais especial"
+                  ></textarea>
 
-                  <div className='flex flex-wrap gap-[1.5rem] justify-center'>
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) pl-[1rem] text-left font-medium'>Folha de ouro</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Frutas desidratadas</button>
-
-                    <button className='cursor-pointer text-(--c7) w-[18rem] bg-(--c12)
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Pétalas de rosas (comestíveis)</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Pó de cacau</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Flores cristalizadas</button>
-
-                    <button className='cursor-pointer text-(--c7) w-[18rem] bg-(--c12)
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Raspas de chocolate belga</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Flor de sal</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Folhas de hortelã glaceadas</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Lâminas de coco desidratado</button>
-
-                    <button className='cursor-pointer text-white w-[18rem] bg-[rgba(0,0,0,0.5)]
-                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Pó perolado artesanal</button>
-
-                    <div class="grid grid-cols-2 gap-[18rem]">
-                        <p class="mt-6 text-sm text-white text-left cursor-default">
-                          1 de 2 detalhes selecionadas
+                  <div class="grid grid-cols-2 gap-[18rem]">
+                        <p class="mt-3 text-sm text-[#D2D2D2] font-light text-left cursor-default">
+                          0/100 caracteres
                         </p>
                     </div>
-                  </div>
                 </div>
                 <div class="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
-                  <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-pointer 
-                  bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md'>Regredir</button>
-                  
-                  <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-pointer 
-                  bg-(--c12) border-1 border-(--c12) rounded-md'>Avançar</button>
+                <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-pointer 
+                bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md'>Regredir</button>
+                
+                <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-pointer 
+                bg-(--c12) border-1 border-(--c12) rounded-md'>Avançar</button>
                 </div>
               </div>
               <div className='w-[50%] ml-[5%]'>
@@ -132,12 +89,12 @@ function Customizado3() {
                     className="mt-3"
                   />
 
-                  <h2 className='text-white font-bold text-xl mt-5'>Tipo de base</h2>
+                  <h2 className='text-white font-bold text-xl mt-5 cursor-default'>Tipo de base</h2>
                   <p class="text-base text-(--c16) text-left cursor-default">
                     Macaron francês
                   </p>
 
-                  <h2 className='text-white font-bold text-xl mt-5'>Tamanho do pacote</h2>
+                  <h2 className='text-white font-bold text-xl mt-5 cursor-default'>Tamanho do pacote</h2>
                   <p class="text-base text-(--c16) text-left cursor-default">
                     Pequeno (8 peças)
                   </p>
@@ -152,7 +109,7 @@ function Customizado3() {
                     Petalas de rosas, raspas de chocolate belga
                   </p>
 
-                  <div className="mt-6 mb-4 h-[2px] w-[100%] bg-(--c12) rounded-full"></div>
+                  <div className="mt-6 mb-4 h-[2px] w-[100%] bg-(--c12) rounded-full cursor-default"></div>
 
                   <div class="grid grid-cols-2">
                     <p class="text-base text-white text-left cursor-default w-[15rem] font-bold">
@@ -210,7 +167,7 @@ function Customizado3() {
                   </div>
 
                   <div class="grid grid-cols-2 mt-7">
-                    <h2 className='text-white font-bold text-xl'>Total da compra</h2>
+                    <h2 className='text-white font-bold text-xl cursor-default'>Total da compra</h2>
                     <p class="text-xl text-(--c7) text-right cursor-default font-bold">
                       R$960,00
                     </p>
@@ -220,11 +177,10 @@ function Customizado3() {
                     bg-(--c12) border-1 border-(--c12) rounded-md'>Adicionar ao carrinho</button>
                 </div>
               </div>
-
             </section>
         </main>
       </div>
     )
 }
 
-export default Customizado3
+export default Customizado4
