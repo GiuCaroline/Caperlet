@@ -46,6 +46,7 @@ O site busca:
 - Layout responsivo
 - Integração com Instagram
 - Blog
+- Acessibilidade no site
 
 ---
 
