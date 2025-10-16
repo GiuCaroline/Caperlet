@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
 function App() {
   return (
     <Router>
-      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Nav/>}
+      {(location.pathname !== "/login" && location.pathname !== "/cadastro") && <Nav/>}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -26,7 +26,7 @@ function App() {
         <Route path="/loja" element={<LojaPadrao />} />
         <Route path="/customizado" element={<Customizado />} />
       </Routes>
-      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Footer/>}
+      {(location.pathname !== "/login" && location.pathname !== "/cadastro") && <Footer/>}
     </Router>
   );
 }
