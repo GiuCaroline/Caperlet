@@ -19,3 +19,28 @@ export async function loginUser(req, res) {
     res.status(500).json({ sucess: false, message: "Erro interno do servidor" });
   }
 }
+
+export async function registerUser(req, res) {
+  const {name, email, phone, password} = req.body;
+
+  try {
+    const existingUser = await pool.query(
+      "SELECT * FROM users WHERE email = $1",
+      [email]
+    );
+
+    if (existingUser.rows.length > 0) {
+      return res.status(400).json({ sucess: false, message: "Email já cadastrado" });
+    }
+
+    const result = await pool.query(
+      "INSERT INTO users (name, email, phone, password) VALUES ($1, $2, $3, $4) RETURNING *",
+      [name, email, phone, password]
+    );
+
+    res.json({ sucess: true, user: result.rows[0] });
+  } catch (error) {
+    console.error("Erro ao registrar:", error);
+    res.status(500).json({ sucess: false, message: "Erro interno do servidor" });
+  }
+}
