@@ -39,6 +39,8 @@ export async function registerUser(req, res) {
     );
 
     res.json({ sucess: true, user: result.rows[0] });
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('userPassword', password);
   } catch (error) {
     console.error("Erro ao registrar:", error);
     res.status(500).json({ sucess: false, message: "Erro interno do servidor" });

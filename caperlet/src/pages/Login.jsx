@@ -12,7 +12,11 @@ function Login() {
         const email = e.target.email.value;
         const senha = e.target.password.value;
         const user = await login(email, senha);
-        if (user) location.href = "/loja";
+        if (user) {
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userPassword", senha);
+            location.href = "/loja"
+        };
     } 
 
     return(
