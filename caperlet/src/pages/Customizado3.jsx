@@ -116,10 +116,10 @@ function Customizado3() {
                 </div>
                 <div class="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
                   <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-pointer 
-                  bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md'>Regredir</button>
+                  bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizadoColoracao"}}>Regredir</button>
                   
                   <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-pointer 
-                  bg-(--c12) border-1 border-(--c12) rounded-md'>Avançar</button>
+                  bg-(--c12) border-1 border-(--c12) rounded-md'  onClick={()=>{window.location="/customizadoPacote"}}>Avançar</button>
                 </div>
               </div>
               <div className='w-[50%] ml-[5%]'>

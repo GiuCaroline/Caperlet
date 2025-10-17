@@ -22,7 +22,7 @@ function Nav() {
             <LogIn className="text-(--c4) w-8"/>
             Login
           </button>
-          <Handbag  className="text-white cursor-pointer" size={23}/>
+          <Handbag onClick={()=>{window.location="/carrinho"}} className="text-white cursor-pointer" size={23}/>
         </div>
     </nav>
     )

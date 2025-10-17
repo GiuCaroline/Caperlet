@@ -37,7 +37,7 @@ function Customizado() {
                     hover:scale-105 transition-all duration-300'>
                       <img
                         src="/images/Brigadeiro1.png"
-                        alt="Macaron de Chocolate ao leite"
+                        alt="Brigadeiro meio amargo"
                       />
                       <p className='font-semibold text-white text-lg mt-[2%]'>Brigadeiro trufado</p>
                       <p className='font-light text-xs text-white'>R$10,00 cada</p>
@@ -45,7 +45,7 @@ function Customizado() {
 
                     <div className='border-4 p-5 flex-col flex justify-center rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c7)
                     hover:scale-105 transition-all duration-300'>
-                      <div>
+                      <div className='relative'>
                         <img
                           src="/images/Macaron1.png"
                           alt="Macaron de Chocolate ao leite"
@@ -84,11 +84,11 @@ function Customizado() {
                   </div>
                   
                   <div class="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
-                    <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-pointer 
+                    <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-default opacity-[0.5]
                     bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md'>Regredir</button>
                     
                     <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-pointer 
-                    bg-(--c12) border-1 border-(--c12) rounded-md'>Avançar</button>
+                    bg-(--c12) border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizadoSabor"}}>Avançar</button>
                   </div>
               </div>
               <div className='w-[50%] ml-[5%]'>
