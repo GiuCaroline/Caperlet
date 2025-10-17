@@ -52,7 +52,7 @@ O site busca:
 
 ## 👩‍💻 Desenvolvido por
 
-**Giulia Caroline Claro**
+**Giulia Caroline Claro** <br/>
 **João Victor Jardim**
 
 ---
