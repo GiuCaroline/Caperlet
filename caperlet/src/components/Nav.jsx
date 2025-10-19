@@ -2,10 +2,27 @@ import '../assets/styles/App.css'
 import { Sun, LogIn } from "lucide-react"
 import { Handbag } from "phosphor-react"
 import { href } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
+
 
 function Nav() {
+    const location = useLocation();
+
+    const purpleShadowRoutes = ["/carrinho"];
+    const greenShadowRoutes = ["/pagamento"];
+
+    let shadowClass = "";
+
+    if (purpleShadowRoutes.includes(location.pathname)) {
+      shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
+    }
+
+    if (greenShadowRoutes.includes(location.pathname)) {
+      shadowClass = "drop-shadow-[0_20px_20px_rgba(34,197,94,1.0)]";
+    }
+
     return(
-    <nav className="bg-(--c3) shadow-md py-6 px-[4rem] flex items-center montserrat-f">
+    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${shadowClass}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
           <span className="text-white">PERLET</span>

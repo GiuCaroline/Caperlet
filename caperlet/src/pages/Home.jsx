@@ -98,7 +98,7 @@ function Home() {
           <div className="flex items-center justify-center gap-4">
             <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-10"></div>
             <h2 className="text-center mb-15 cursor-default">
-              <span className="block text-4xl md:text-5xl text-(--c4)">
+              <span className="block text-4xl font-semibold md:text-5xl text-(--c4)">
                 O que nossos clientes dizem
               </span>
               <span className="flex items-center justify-center text-lg text-(--c19) font-light tracking-widest mt-1">

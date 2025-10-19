@@ -13,6 +13,13 @@ import Customizado2 from "./pages/Customizado2.jsx"
 import Customizado3 from './pages/Customizado3.jsx'
 import Customizado4 from "./pages/Customizado4.jsx"
 import Carrinho from "./pages/Carrinho.jsx"
+import Pagamento from "./pages/Pagamento.jsx"
+
+const hideNavPages = ["/login", "/cadastro"];
+const showNav = !hideNavPages.includes(location.pathname);
+
+const hideFooterPages = ["/login", "/cadastro"];
+const showFooter = !hideFooterPages.includes(location.pathname);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,7 +29,7 @@ createRoot(document.getElementById('root')).render(
 function App() {
   return (
     <Router>
-      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Nav/>}
+      {showNav && <Nav />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -33,8 +40,9 @@ function App() {
         <Route path="/customizadoColoracao" element={<Customizado3 />} />
         <Route path="/customizadoPacote" element={<Customizado4 />} />
         <Route path="/carrinho" element={<Carrinho />} />
+        <Route path="/pagamento" element={<Pagamento />} />
       </Routes>
-      {(location.pathname !== "/login" || location.pathname !== "/cadastro") && <Footer/>}
+      {showFooter && <Footer />}
     </Router>
   );
 }

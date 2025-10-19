@@ -22,9 +22,15 @@
     --c18: #929292;
     --c19: rgba(192, 154, 248, 0.5);
     --c20: #7b7b7b;
-    --c21: rgba(152, 92, 240, 0.5)
+    --c21: rgba(152, 92, 240, 0.5);
+    --c22: rgba(21, 211, 62, 0.5);
+    --c23: #15D33E;
 }
 
 .montserrat-f {
   font-family: "Montserrat", sans-serif;
+}
+
+.shadow-nav {
+  box-shadow: 0 8px 20px rgba(150,0,255,0.4);
 }
