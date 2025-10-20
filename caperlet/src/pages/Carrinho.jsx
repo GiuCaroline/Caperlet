@@ -12,9 +12,9 @@ function Carrinho(){
                     <ArrowLeft className='text-(--c20)'/>
                     <p className='text-(--c20)'>Continuar comprando</p>
                 </div>
-                <div className='mb-8 mt-3 flex '>
+                <div className='mb-[3%] mt-[1%] flex '>
                     <Handbag size={55} className="bg-(--c21) rounded-full p-2" color='#C09AF8' />
-                    <div className='flex flex-col ml-3'>
+                    <div className='flex flex-col ml-[2%]'>
                         <h2 className='text-white font-bold text-2xl'>Carrinho de compras</h2>
                         <p className='text-white font-light'>2 itens no seu carrinho</p>
                     </div>
@@ -38,7 +38,7 @@ function Carrinho(){
                                     <p className='text-(--c11) text-sm cursor-default'>Massa de chocolate suiço meio amargo, finalizado com um chocolate françês em pó</p>
 
                                     <div className='items-center flex'>
-                                        <p className='cursor-default mt-2 text-[11px] border-2 border-(--c8) p-[1px] text-(--c8) rounded-md'>unidade</p>
+                                        <p className='cursor-default mt-[1%] text-[11px] border-2 border-(--c8) p-[1px] text-(--c8) rounded-md'>unidade</p>
                                     </div>
 
                                     <div className="flex items-center gap-3 mt-1">

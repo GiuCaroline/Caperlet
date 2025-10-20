@@ -46,32 +46,32 @@ function Home() {
     return(
       <div className="min-h-screen bg-linear-to-br from-(--c1) from-50% to-(--c2) flex flex-wrap justify-center montserrat-f">
         <main className="flex-1 flex flex-row items-start justify-between p-6">
-          <div className="p-[7rem] flex flex-col">
-            <span className="justify-center flex items-center text-lg px-6 mb-6 w-[15rem] py-1.5 bg-(--c4) 
+          <div className="p-[8%] flex flex-col">
+            <span className="justify-center flex items-center text-lg px-6 mb-[4%] w-[35%] py-1.5 bg-(--c4) 
             text-white rounded-3xl cursor-default gap-x-[1rem]">
-              <Star className="w-5.5 stroke-white fill-white" />
+              <Star className="w-[14%] stroke-white fill-white" />
               Robusto e ousado
             </span>
 
             <h2 className="text-8xl text-(--c4) cursor-default font-extrabold">BRIGADEIRO</h2>
-            <h2 className="text-8xl text-white cursor-default font-extrabold mb-4">MEIO<br/>AMARGO</h2>
-            <p className="text-(--c5) cursor-default max-w-2xl text-xl mb-4">
+            <h2 className="text-8xl text-white cursor-default font-extrabold mb-[4%]">MEIO<br/>AMARGO</h2>
+            <p className="text-(--c5) cursor-default max-w-2xl text-xl">
               Massa de chocolate suíço meio amargo, finalizado com um chocolate francês em pó.
             </p>
 
-            <div className="flex flex-row gap-x-[3rem] mt-20">
-              <p className="text-(--c4) mt-5 text-3xl font-bold max-w-2xl">
+            <div className="flex flex-row gap-x-[3rem] mt-[15%]">
+              <p className="text-(--c4) mt-[4%] text-3xl font-bold max-w-2xl">
                 <span className="underline cursor-default">R$15,00/unidade</span><br/>
                 <span className="underline cursor-default text-white font-extralight text-lg">Ou comprar o </span><span className="cursor-pointer underline text-lg font-extralight">pacote fechado</span>
               </p>
-              <button className="flex items-center gap-x-[0.5rem] mt-6 px-6 py-6 
+              <button className="flex items-center gap-x-[0.5rem] mt-[4%] px-6 py-6 
               bg-white text-black rounded-full text-lg cursor-pointer hover:scale-105 transition">
-                  <ShoppingBag className="w-6 text-black" />
+                  <ShoppingBag className="w-[15%] text-black" />
                   Por no carrinho
               </button>
             </div>
 
-            <div className="flex flex-row gap-x-[1rem] items-center mt-25">
+            <div className="flex flex-row gap-x-[1rem] items-center mt-[15%]">
               <p className="text-(--c6) text-[1.5rem] cursor-default">01/03</p>
               <button className="flex items-center p-4 bg-black opacity-[80%]
               text-white rounded-full cursor-pointer">
@@ -96,17 +96,17 @@ function Home() {
         <section className="w-full flex flex-col items-center justify-center py-16 px-6 md:px-20 text-center bg-transparent overflow-hidden">
           
           <div className="flex items-center justify-center gap-4">
-            <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-10"></div>
-            <h2 className="text-center mb-15 cursor-default">
+            <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-[9%]"></div>
+            <h2 className="text-center mb-[9%] cursor-default">
               <span className="block text-4xl font-semibold md:text-5xl text-(--c4)">
                 O que nossos clientes dizem
               </span>
-              <span className="flex items-center justify-center text-lg text-(--c19) font-light tracking-widest mt-1">
+              <span className="flex items-center justify-center text-lg text-(--c19) font-light tracking-widest mt-[1%]">
                 Experiências que adoçam o coraçãoㅤ
                 <InstagramLogo size={20} color='#fff' opacity={0.5}/>
               </span>
             </h2>
-            <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-10"></div>
+            <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-[9%]"></div>
           </div>
 
           {/* Container geral */}
@@ -140,7 +140,7 @@ function Home() {
                       </div>
 
                       {/* Texto */}
-                      <p className="text-gray-700 italic text-lg mb-6">
+                      <p className="text-gray-700 italic text-lg mb-[5%]">
                         “{item.text}”
                       </p>
 
@@ -149,7 +149,7 @@ function Home() {
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-(--c4) shadow-md"
+                          className="w-16 h-16 rounded-full object-cover mb-[2%] border-2 border-(--c4) shadow-md"
                         />
                         <h4 className="font-semibold text-(--c8)">{item.name}</h4>
                         <span className="text-sm text-gray-500">{item.city}</span>
@@ -161,7 +161,7 @@ function Home() {
             </div>
 
             {/* 🔽 Pontinhos de navegação (fora do carrossel) */}
-            <div className="flex justify-center gap-2 mt-10">
+            <div className="flex justify-center gap-2 mt-[10%]">
               {testimonials.map((_, i) => (
                 <button
                   key={i}

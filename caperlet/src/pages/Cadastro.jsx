@@ -5,11 +5,11 @@ import { Mail, KeyRound, Instagram, Twitter, User, Phone, Undo2 } from 'lucide-r
 function Cadastro() {
     return(
         <div className="min-h-screen flex flex-col items-center justify-center bg-(--c1) montserrat-f">
-            <span className='w-[500px] p-2'>
+            <span className='w-[30%] p-2'>
                 <Undo2 onClick={()=>{window.history.back()}} className='text-(--c4) cursor-pointer transition duration-300 transform-cpu hover:scale-150'/>
             </span>
-            <div className="bg-transparent border-solid border-(--c4) border-2 p-10 rounded-2xl shadow-lg w-[500px]">
-                <h1 className="text-3xl font-bold mb-6 text-center text-(--c4) cursor-default">Faça seu cadastro</h1>
+            <div className="bg-transparent border-solid border-(--c4) border-2 p-10 rounded-2xl shadow-lg w-[30%]">
+                <h1 className="text-3xl font-bold mb-[5%] text-center text-(--c4) cursor-default">Faça seu cadastro</h1>
                 <form className="flex flex-col gap-4">
                     <div className="flex items-center gap-3 border-b-(--c4) border-b-2 p-3
                  transition-colors duration-300 focus-within:border-b-white">
@@ -47,7 +47,7 @@ function Cadastro() {
                             className="bg-transparent outline-none w-full text-(--c4) placeholder:text-(--c4) placeholder:opacity-70"
                         />
                     </div>
-                    <div className="flex flex-row items-center justify-center gap-x-[4rem] mt-[2rem] mb-[2rem]">
+                    <div className="flex flex-row items-center justify-center gap-x-[4rem] mt-[10%] mb-[10%]">
                         <GoogleLogo size={25} className="text-(--c4) cursor-pointer" />
                         <Instagram className="text-(--c4) cursor-pointer"/>
                         <Twitter className="text-(--c4) cursor-pointer"/>
