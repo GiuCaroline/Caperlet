@@ -34,3 +34,8 @@
 .shadow-nav {
   box-shadow: 0 8px 20px rgba(150,0,255,0.4);
 }
+
+input[type="radio"]:checked + label {
+            background-color: var(--c4);
+            color: white;
+          }  

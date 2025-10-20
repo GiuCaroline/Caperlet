@@ -11,8 +11,9 @@ export function useCandies() {
     setErro(null);
     try {
       const data = await apiRequest("/products/candies", "GET");
-      if (!data.sucess) throw new Error(data.message);
+      if (!data.success) throw new Error(data.message);
       setCandies(data.candies);
+      return data.candies;
     } catch (err) {
       setErro(err.message);
     } finally {

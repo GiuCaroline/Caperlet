@@ -1,16 +1,17 @@
 import '../assets/styles/App.css'
 import { Sparkle } from "phosphor-react"
 import { Plus, Minus } from "lucide-react"
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 function CardDoces({candy, loading, erro}) {
-    const { name, desc, price, image } = candy;
-    const [quantity, setQuantity] = useState(1);
-    const [actualPrice, setActualPrice] = useState(price);
-
+  const { id, name, desc, price, image, packageSize, packagePrice } = candy;
+  const [quantity, setQuantity] = useState(1);
+  const [actualPrice, setActualPrice] = useState(price);
+  const [selectedSize, setSelectedSize] = useState("unit")
+  
     useEffect(() => {
-        setActualPrice(price * quantity);
-    }, [quantity, price]);
+        setActualPrice((selectedSize === "unit" ? price : packagePrice) * quantity);
+    }, [quantity, price, packagePrice, selectedSize]);
 
     function increaseQuantity() {
         setQuantity((q) => q + 1);
@@ -30,7 +31,7 @@ function CardDoces({candy, loading, erro}) {
                   <img
                     src={image}
                     alt={name}
-                    className="mt-3"
+                    className="mt-3 object-cover w-full h-48 "
                   />
 
                   <div className="p-5">
@@ -47,20 +48,22 @@ function CardDoces({candy, loading, erro}) {
                     </p>
 
                     <div className="flex gap-2 mb-4">
-                      <span className="cursor-pointer flex items-center gap-1 px-5 bg-(--c4) py-1 text-white rounded-lg text-xs font-semibold">
+                      <input type="radio" id={`btnSize-${id}-1`} name={`btnSize-${id}`} value={1} checked={selectedSize === "unit"} onChange={() => setSelectedSize("unit")} className='hidden' />
+                      <label htmlFor={`btnSize-${id}-1`} className="cursor-pointer flex items-center gap-1 px-5 bg-[rgba(152,92,240,0.1)] text-(--c8) py-1 rounded-lg text-xs font-semibold">
                         <Sparkle size={14} />
                         Unidade
-                      </span>
-                      <span className="cursor-pointer flex items-center gap-1 px-4 py-1 bg-[rgba(152,92,240,0.1)] text-(--c8)
+                      </label>
+                      <input type="radio" id={`btnSize-${id}-2`} name={`btnSize-${id}`} value={packageSize} checked={selectedSize === "package"} onChange={() => setSelectedSize("package")} className='hidden' />
+                      <label htmlFor={`btnSize-${id}-2`} className="cursor-pointer flex items-center gap-1 px-4 py-1 bg-[rgba(152,92,240,0.1)] text-(--c8)
                        rounded-lg text-xs font-semibold">
                         <Sparkle size={14} />
-                        Pacote (12)
-                      </span>
+                        Pacote ({packageSize})
+                      </label>
                     </div>
 
                     <div className="text-white font-bold text-2xl cursor-default">
                       {formatPrice(actualPrice)}
-                      <span className="text-xs text-white font-normal cursor-default"> por unidade</span>
+                      <span className="text-xs text-white font-normal cursor-default"> por {selectedSize === "unit" ? "unidade" : "pacote"}</span>
                     </div>
 
                     <div className="flex items-center gap-3 mt-3">

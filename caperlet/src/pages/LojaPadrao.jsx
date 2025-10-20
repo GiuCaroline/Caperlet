@@ -10,11 +10,11 @@ function LojaPadrao() {
 
     useEffect(() => {
       const carregaDoces = async () => {
-        const data = await fetchCandies();
+        const data = await fetchCandies().then(()=>{console.log(candies)});
         if(data && data.length > 0){
           const candies = data.map((candy) => {
-            const { id, name, desc, price, image } = candy;
-            return { id, name, desc, price, image };
+            const { id, name, desc, price, image, packageSize, packagePrice } = candy;
+            return { id, name, desc, price, image, packageSize, packagePrice };
           });
           setCandies(candies);
         }
@@ -23,7 +23,7 @@ function LojaPadrao() {
     }, []);
 
     return(
-      <div className="min-h-screen flex flex-col montserrat-f">        
+      <div className="min-h-screen flex flex-col montserrat-f">     
         <main className="flex-1 flex flex-col">
             <section className="flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-[100%]">
                 <div className="flex flex-row gap-x-[2rem]">
