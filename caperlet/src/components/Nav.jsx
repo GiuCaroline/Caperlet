@@ -1,9 +1,27 @@
 import '../assets/styles/App.css'
 import { Sun, LogIn } from "lucide-react"
 import { Handbag } from "phosphor-react"
+import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
 function Nav() {
+  const location = useLocation();
+  const [shadowClass, setShadowClass] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setShadowClass("shadow-md");
+      } else {
+        setShadowClass("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const [isLogged, setIsLogged] = useState(false);
 
@@ -21,8 +39,9 @@ function Nav() {
     setIsLogged(false);
   }
 
-    return(
-    <nav className="bg-(--c3) shadow-md py-6 px-[4rem] flex items-center montserrat-f">
+
+  return(
+    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${shadowClass}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
           <span className="text-white">PERLET</span>
@@ -42,7 +61,7 @@ function Nav() {
               <><LogIn className="text-(--c4) w-8"/> <span className='text-(--c4) pr-2'>Login</span></>
              }
           </button>
-          <Handbag  className="text-white cursor-pointer" size={23}/>
+          <Handbag onClick={()=>{window.location="/carrinho"}} className="text-white cursor-pointer" size={23}/>
         </div>
     </nav>
     )

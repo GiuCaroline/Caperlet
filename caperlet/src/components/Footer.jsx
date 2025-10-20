@@ -22,9 +22,9 @@ function Footer(){
             <section className='flex flex-col flex-wrap justify-start'>
                 <p className='font-bold mb-6'>Contato</p>
                 <label htmlFor="" className='mb-2'>Seu email</label>
-                <input type="email" name="" id="" className='mb-4 bg-[#000]/50 text-[#fff] w-[calc(20px + 2rem)] rounded-md border-1 border-(--c2) outline-none focus:border-2 focus:bg-[#000]/70'/>
+                <input type="email" name="" id="" className='p-4 mb-4 bg-[#000]/50 text-[#fff] w-[calc(20px + 2rem)] rounded-md border-1 border-(--c2) outline-none focus:border-2 focus:bg-[#000]/70'/>
                 <label htmlFor="" className='mb-2'>Sua mensagem</label>
-                <textarea name="" id="" className=' resize-none mb-4 bg-[#000]/50 text-[#fff] w-100 h-25 rounded-md border-1 border-(--c2) outline-none focus:border-2 focus:bg-[#000]/70'/>
+                <textarea name="" id="" className='p-4 resize-none mb-4 bg-[#000]/50 text-[#fff] w-100 h-25 rounded-md border-1 border-(--c2) outline-none focus:border-2 focus:bg-[#000]/70'/>
                 <button className='p-1 px-3 w-30 rounded-md text-[#fff] bg-(--c2) cursor-pointer transition duration-200 transform-cpu hover:scale-105 hover:bg-(--c8)'>Enviar</button>
             </section>
         </footer>

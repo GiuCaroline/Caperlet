@@ -27,7 +27,7 @@ function LojaPadrao() {
                 </p>
             </section>
             <section className="bg-(--c3) py-12 flex flex-col items-center w-[100%]">
-              <div className="flex flex-row gap-x-20">
+              <div className="flex flex-row gap-x-30 flex-wrap justify-center">
                 <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21rem] border-(--c10) border-1
                 transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
@@ -183,10 +183,6 @@ function LojaPadrao() {
               
             </section>
         </main>
-
-        <footer className="bg-white text-gray-500 text-sm text-center p-4">
-          © 2025 - Feito por Giulia e Muchas💻
-        </footer>
       </div>
     )
 }

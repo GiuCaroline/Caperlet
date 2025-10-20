@@ -3,7 +3,7 @@ import { Plus, Minus } from "lucide-react"
 import { Sparkle } from "phosphor-react"
 import CaminhoCustom from '../components/CaminhoCustom.jsx'
 
-function Customizado() {
+function Customizado2() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
@@ -27,71 +27,58 @@ function Customizado() {
                 </p>
                 <CaminhoCustom/>
             </section>
-            <section className="bg-(--c3) p-15 flex w-[100%]">
+            <section className="bg-(--c3) p-15 flex w-full">
               <div className='w-[50%]'>
-                <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-full">
-                  <h1 class="text-4xl font-bold mb-[5%] text-white text-left cursor-default">Escolha até 2 cores</h1>
+                <div className='p-8 rounded-xl border border-(--c12) bg-transparent w-full'>
+                  <h1 class="text-4xl font-bold mb-[4%] text-white text-left cursor-default">Selecione até 3 sabor(es)</h1>
 
-                  <div class="grid grid-cols-2 gap-6">
-                    <div className='cursor-pointer border-2 p-5 flex-col flex justify-center rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <img
-                        src="/images/Brigadeiro1.png"
-                        alt="Brigadeiro meio amargo"
-                      />
-                      <p className='font-semibold text-white text-lg mt-[2%]'>Brigadeiro trufado</p>
-                      <p className='font-light text-xs text-white'>R$10,00 cada</p>
-                    </div>
+                  <div className='flex flex-wrap gap-[1.5rem] justify-center'>
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) pl-[1rem] text-left font-medium'>Mel de lavanda</button>
 
-                    <div className='cursor-pointer border-4 p-5 flex-col flex justify-center rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c7)
-                    hover:scale-105 transition-all duration-300'>
-                      <div className='relative'>
-                        <img
-                          src="/images/Macaron1.png"
-                          alt="Macaron de Chocolate ao leite"
-                          className='w-full'
-                        />
-                        <div
-                          class="absolute top-2 right-2 w-4 h-4 rounded-full bg-(--c7) border-4 border-(--c12)"
-                        ></div>
-                        <p className='font-semibold text-white text-lg mt-[2%]'>Macaron francês</p>
-                        <p className='font-light text-xs text-white'>R$12,00 cada</p>
-                      </div>
-                    </div>
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Frutas vermelhas</button>
 
-                    <div className='cursor-pointer border-2 p-5 flex-col flex justify-center rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <img
-                        src="/images/Bombom1.png"
-                        alt="Bombom"
-                      />
-                      <p className='font-semibold text-white text-lg mt-[2%]'>Bombom recheado</p>
-                      <p className='font-light text-xs text-white'>R$12,00 cada</p>
-                    </div>
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Chá preto</button>
 
-                    <div className='cursor-pointer border-2 p-5 flex-col flex justify-center rounded-2xl bg-[rgba(53,41,22,0.2)] border-(--c12)
-                    hover:scale-105 transition-all duration-300'>
-                      <img
-                        src="/images/Nougat1.png"
-                        alt="Nougat"
-                          className='w-full'
-                      />
-                      <p className='font-semibold text-white text-lg mt-[2%]'>Nougat clássico</p>
-                      <p className='font-light text-xs text-white'>R$15,00 cada</p>
-                    </div>
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Champanhe</button>
 
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Baunilha</button>
+
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Licor alcoólico</button>
+
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Pistache</button>
+
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Caramelo salgado</button>
+
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Chocolate branco</button>
+
+                    <button className='cursor-pointer text-white w-[45%] h-[2rem] bg-[rgba(0,0,0,0.5)]
+                     rounded-md border-1 border-(--c12) text-left pl-[1rem] font-medium'>Chocolate amargo</button>
+
+                    <div class="grid grid-cols-2 gap-[18rem]">
+                        <p class="mt-[2%] text-sm text-white text-left cursor-default">
+                          2 de 3 sabores selecionados
+                        </p>
                     </div>
                   </div>
-                  
-                  <div class="grid grid-cols-2 gap-[31rem] mt-[3%] w-full">
-                    <button className='w-full h-[2.3rem] text-(--c13) font-bold cursor-default opacity-[0.5]
-                    bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md'>Regredir</button>
+                </div>
+                  <div class="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
+                    <button className='w-full h-[2.3rem] text-(--c13) font-bold cursor-pointer 
+                    bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizado"}}>Regredir</button>
                     
                     <button className='w-full h-[2.3rem] text-white font-bold cursor-pointer 
-                    bg-(--c12) border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizadoSabor"}}>Avançar</button>
+                    bg-(--c12) border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizadoColoracao"}}>Avançar</button>
                   </div>
               </div>
-              <div className='w-[50%] ml-[5%]'>
+               <div className='w-[50%] ml-[5%]'>
                 <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-full flex flex-col">
                   <h1 class="text-4xl font-bold mb-[5%] text-white text-left cursor-default">Sua criação açucarada</h1>
 
@@ -184,4 +171,4 @@ function Customizado() {
     )
 }
 
-export default Customizado
+export default Customizado2
