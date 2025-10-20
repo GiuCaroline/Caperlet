@@ -7,8 +7,15 @@ import { useState, useEffect } from 'react';
 function Nav() {
   const location = useLocation();
   const [shadowClass, setShadowClass] = useState("");
+  const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
+    const email = localStorage.getItem("userEmail");
+    const password = localStorage.getItem("userPassword");
+    if (email && password) {
+      setIsLogged(true);
+    }
+
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setShadowClass("shadow-md");
@@ -21,16 +28,6 @@ function Nav() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  const [isLogged, setIsLogged] = useState(false);
-
-  useEffect(() => {
-    const email = localStorage.getItem("userEmail");
-    const password = localStorage.getItem("userPassword");
-    if (email && password) {
-      setIsLogged(true);
-    }
   }, []);
 
   function handleLogout() {
@@ -54,7 +51,7 @@ function Nav() {
         </div>
         <div className="flex gap-x-[1rem] items-center">
           <Sun size={23} className="text-white cursor-pointer"/>
-          <button onClick={()=>{isLogged? handleLogout(): location.href="/login"}}  className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
+          <button onClick={()=>{isLogged? handleLogout(): window.location.href="/login"}}  className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
             {isLogged ? 
               <><LogIn className="text-(--c4) w-8"/> <span className="text-(--c4) pr-2">Logout</span></>
              : 
