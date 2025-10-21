@@ -6,8 +6,20 @@ import { useState, useEffect } from 'react';
 
 function Nav() {
   const location = useLocation();
-  const [shadowClass, setShadowClass] = useState("");
   const [isLogged, setIsLogged] = useState(false);
+
+  const purpleShadowRoutes = ["/carrinho"];
+  const greenShadowRoutes = ["/pagamento"];
+  
+  let shadowClass = "";
+  
+  if (purpleShadowRoutes.includes(location.pathname)) {
+    shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
+  }
+
+  if (greenShadowRoutes.includes(location.pathname)) {
+    shadowClass = "drop-shadow-[0_20px_20px_rgba(34,197,94,1.0)]";
+  }
 
   useEffect(() => {
     const email = localStorage.getItem("userEmail");
