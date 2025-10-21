@@ -70,7 +70,7 @@ function Customizado2() {
                     </div>
                   </div>
                 </div>
-                  <div class="grid grid-cols-2 gap-[31rem] mt-5 w-full">
+                  <div class="grid grid-cols-2 gap-[31rem] mt-[3%] w-full">
                     <button className='w-full h-[2.3rem] text-(--c13) font-bold cursor-pointer 
                     bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizado"}}>Regredir</button>
                     

@@ -20,19 +20,19 @@ function Customizado4() {
                     Customizados
                     </span>
                 </div>
-                <h2 className="text-7xl text-white cursor-default font-extrabold mt-15">O DOCE DOS</h2>
+                <h2 className="text-7xl text-white cursor-default font-extrabold mt-[5%]">O DOCE DOS</h2>
                 <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">SONHOS DOCES</h2>
-                <p className="text-white cursor-default max-w-2xl text-2xl mt-5 font-light text-center">
+                <p className="text-white cursor-default max-w-2xl text-2xl mt-[2%] font-light text-center">
                     Design customizado que reflete o seu sabor de forma única em cada detalhe
                 </p>
                 <CaminhoCustom/>
             </section>
-            <section className="bg-(--c3) p-15 flex w-[100%]">
+            <section className="bg-(--c3) p-15 flex w-full">
               <div className='w-[50%]'>
-                <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-[45rem]">
-                  <h1 class="text-4xl font-bold mb-6 text-white text-left cursor-default">Customize o(s) pacote(s)</h1>
+                <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-full">
+                  <h1 class="text-4xl font-bold mb-[4%] text-white text-left cursor-default">Customize o(s) pacote(s)</h1>
 
-                  <h2 className='text-white font-bold text-base mt-5 cursor-default'>Tamanho do pacote</h2>
+                  <h2 className='text-white font-bold text-base cursor-default'>Tamanho do pacote</h2>
 
                   <div className='flex gap-3 justify-center mt-[2%]'>
                     
