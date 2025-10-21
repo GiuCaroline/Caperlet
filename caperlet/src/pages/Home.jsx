@@ -84,11 +84,11 @@ function Home() {
             </div>
           </div>
           
-          <div className="px-[6rem] flex justify-center">
+          <div className="px-[6rem] flex justify-center h-[92%]">
             <img 
               src="/images/BrigadeiroHome.png" 
               alt="Brigadeiro meio amargo" 
-              className="shadow-lg max-w-md"
+              className="shadow-lg w-full h-full"
             />
             <div className="absolute bottom-[-13rem] right-50 w-[1px] h-[80px] bg-(--c1)"></div>
           </div>

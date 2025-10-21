@@ -22,12 +22,12 @@ function Nav() {
     }
 
     return(
-    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${shadowClass}`}>
+    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center justify-between montserrat-f ${shadowClass}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
           <span className="text-white">PERLET</span>
         </h1>
-        <div className="text-white flex items-center px-[17rem] text-[1.2rem] list-none gap-x-[5rem]">
+        <div className="text-white flex items-center text-[1.2rem] list-none gap-x-[5rem]">
           <li className="cursor-pointer"><a href="/">Home</a></li>
           <li className="cursor-pointer"><a href="/loja">Loja</a></li>
           <li className="cursor-pointer"><a href="">Sobre nós</a></li>
