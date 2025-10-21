@@ -8,6 +8,10 @@ function CardDoces({candy, loading, erro}) {
   const [quantity, setQuantity] = useState(1);
   const [actualPrice, setActualPrice] = useState(price);
   const [selectedSize, setSelectedSize] = useState("unit")
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   
     useEffect(() => {
         setActualPrice((selectedSize === "unit" ? price : packagePrice) * quantity);
@@ -23,6 +27,30 @@ function CardDoces({candy, loading, erro}) {
 
     function formatPrice(value) {
         return `R$${value.toFixed(2).replace(".", ",")}`;
+    }
+
+    function cartAdd(id, quantity, selectedSize) {
+
+      const alreadyInCart = cart.findIndex((item) => item.id === id && item.size === selectedSize);
+      console.log("Id, quantidade e tamanho: ", id, quantity, selectedSize);
+      console.log(alreadyInCart);
+
+      let newCart = [];
+
+      if (alreadyInCart >= 0) {
+        newCart = cart.map((item, index) => {
+          if (index === alreadyInCart) {
+            console.log("Item e index: ", item, index)
+            return { ...item, quantity: quantity };
+          }
+          return item;
+        });
+      } else {
+        newCart = [...cart, { id: id, quantity: quantity, size: selectedSize }];
+      }
+
+      setCart(newCart);
+      localStorage.setItem("cart", JSON.stringify(newCart));
     }
 
     return(
@@ -79,13 +107,13 @@ function CardDoces({candy, loading, erro}) {
                         <Plus/>
                       </button>
                     </div>
-                    <button className='cursor-pointer w-full transition duration-[300ms] justify-center flex items-center gap-1 px-4 py-1 bg-(--c4) text-white
+                    <button onClick={()=>{cartAdd(id, quantity, selectedSize)}} className='cursor-pointer w-full transition duration-[300ms] justify-center flex items-center gap-1 px-4 py-1 bg-(--c4) text-white
                        rounded-lg text-xs font-semibold hover:scale-[1.05] mt-4'>
                       <ShoppingBag/>
                       Adicionar ao carrinho
                     </button>
                   </div>
-                </div>
+                </div> 
     )
 }
 
