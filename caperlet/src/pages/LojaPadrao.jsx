@@ -22,6 +22,18 @@ function LojaPadrao() {
       carregaDoces();
     }, []);
 
+    function cartAdd(id, quantity, selectedSize){
+      const savedCart = localStorage.getItem("cart");
+      const cart = savedCart ? JSON.parse(savedCart) : [];
+      const existingItemIndex = cart.findIndex(item => item.id === id && item.size === selectedSize);
+      if (existingItemIndex !== -1) {
+        cart[existingItemIndex].quantity = quantity;
+      } else {
+        cart.push({ id, quantity, size: selectedSize });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
     return(
       <div className="min-h-screen flex flex-col montserrat-f">     
         <main className="flex-1 flex flex-col">
@@ -48,7 +60,7 @@ function LojaPadrao() {
               <div className="flex flex-row gap-x-30 flex-wrap justify-center">
                 {candies && candies.length > 0 ? (
                   candies.map((candy) => (
-                    <CardDoces key={candy.id} candy={candy} />
+                    <CardDoces key={candy.id} candy={candy} cartAdd={cartAdd} />
                   ))
                 ) : (
                   <p className="text-white">Nenhum doce encontrado.</p>

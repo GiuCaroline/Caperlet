@@ -3,15 +3,11 @@ import { Sparkle } from "phosphor-react"
 import { Plus, Minus, ShoppingBag } from "lucide-react"
 import { useState, useEffect } from 'react'
 
-function CardDoces({candy, loading, erro}) {
+function CardDoces({candy, loading, erro, cartAdd}) {
   const { id, name, desc, price, image, packageSize, packagePrice } = candy;
   const [quantity, setQuantity] = useState(1);
   const [actualPrice, setActualPrice] = useState(price);
   const [selectedSize, setSelectedSize] = useState("unit")
-  const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : [];
-  });
   
     useEffect(() => {
         setActualPrice((selectedSize === "unit" ? price : packagePrice) * quantity);
@@ -27,30 +23,6 @@ function CardDoces({candy, loading, erro}) {
 
     function formatPrice(value) {
         return `R$${value.toFixed(2).replace(".", ",")}`;
-    }
-
-    function cartAdd(id, quantity, selectedSize) {
-
-      const alreadyInCart = cart.findIndex((item) => item.id === id && item.size === selectedSize);
-      console.log("Id, quantidade e tamanho: ", id, quantity, selectedSize);
-      console.log(alreadyInCart);
-
-      let newCart = [];
-
-      if (alreadyInCart >= 0) {
-        newCart = cart.map((item, index) => {
-          if (index === alreadyInCart) {
-            console.log("Item e index: ", item, index)
-            return { ...item, quantity: quantity };
-          }
-          return item;
-        });
-      } else {
-        newCart = [...cart, { id: id, quantity: quantity, size: selectedSize }];
-      }
-
-      setCart(newCart);
-      localStorage.setItem("cart", JSON.stringify(newCart));
     }
 
     return(

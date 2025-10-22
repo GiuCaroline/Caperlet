@@ -23,9 +23,9 @@ function Pagamento() {
                 </div>
                 <section className="bg-(--c3) flex w-[100%]">
                     <div className='w-[92%] gap-10 flex flex-col'>
-                        <div class="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
-                            <div class="flex flex-col">
-                                <h1 class="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de envio</h1>
+                        <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
+                            <div className="flex flex-col">
+                                <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de envio</h1>
 
                                 <div className='flex gap-10 flex-row w-full'>
                                     <div className='flex flex-col w-full'>
@@ -90,9 +90,9 @@ function Pagamento() {
                             </div>
                         </div>
 
-                        <div class="p-8 rounded-xl border border-[#2a2a2a] bg-transparent w-[100%]">
-                            <div class="flex flex-col">
-                                <h1 class="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de pagamento</h1>
+                        <div className="p-8 rounded-xl border border-[#2a2a2a] bg-transparent w-[100%]">
+                            <div className="flex flex-col">
+                                <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de pagamento</h1>
 
                                 <div className='flex flex-row gap-3'>
                                     <button className='cursor-pointer border-1 border-(--c23) bg-(--c23) text-(--c3) rounded-lg w-[10%] text-sm'>Crédito</button>
@@ -136,8 +136,8 @@ function Pagamento() {
 
                     </div>
                     <div className='w-[50%] ml-[5%]'>
-                        <div class="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
-                            <h1 class="text-3xl font-bold mb-3 text-white text-left cursor-default">Resumo do pedido</h1>
+                        <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
+                            <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Resumo do pedido</h1>
                             
                             <div className='flex'>
                                 <div className="relative w-full">
@@ -150,29 +150,29 @@ function Pagamento() {
                             
                             <div className="w-full mt-[5%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
 
-                            <div class="grid grid-cols-2 mt-[2%]">
-                                <p class="text-base text-white text-left cursor-default">
+                            <div className="grid grid-cols-2 mt-[2%]">
+                                <p className="text-base text-white text-left cursor-default">
                                 Subtotal
                                 </p>
-                                <p class="text-base text-[#969696] text-right cursor-default">
+                                <p className="text-base text-[#969696] text-right cursor-default">
                                 R$1678,00
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-2 mt-1">
-                                <p class="text-base text-white text-left cursor-default">
+                            <div className="grid grid-cols-2 mt-1">
+                                <p className="text-base text-white text-left cursor-default">
                                 Código promocional
                                 </p>
-                                <p class="text-base text-[#969696] text-right cursor-default">
+                                <p className="text-base text-[#969696] text-right cursor-default">
                                 -<span>R$00,00</span>
                                 </p>
                             </div>
 
-                            <div class="grid grid-cols-2 mt-1">
-                                <p class="text-base text-white text-left cursor-default">
+                            <div className="grid grid-cols-2 mt-1">
+                                <p className="text-base text-white text-left cursor-default">
                                 Frete
                                 </p>
-                                <p class="text-base text-[#969696] text-right cursor-default">
+                                <p className="text-base text-[#969696] text-right cursor-default">
                                 R$00,00
                                 </p>
                             </div>
@@ -180,10 +180,10 @@ function Pagamento() {
                             <div className="w-full mt-[2%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
 
                             <div className='grid grid-cols-2 mt-[2%]'>
-                                <p class="text-xl text-white text-left cursor-default font-bold">
+                                <p className="text-xl text-white text-left cursor-default font-bold">
                                 Total
                                 </p>
-                                <p class="text-xl text-(--c23) text-right cursor-default font-bold">
+                                <p className="text-xl text-(--c23) text-right cursor-default font-bold">
                                 R$1678,00
                                 </p>
                             </div>

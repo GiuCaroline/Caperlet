@@ -7,18 +7,33 @@ import { useState, useEffect } from 'react';
 function Nav() {
   const location = useLocation();
   const [isLogged, setIsLogged] = useState(false);
-
-  const purpleShadowRoutes = ["/carrinho"];
-  const greenShadowRoutes = ["/pagamento"];
-  
   let shadowClass = "";
   
-  if (purpleShadowRoutes.includes(location.pathname)) {
-    shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
-  }
-
-  if (greenShadowRoutes.includes(location.pathname)) {
-    shadowClass = "drop-shadow-[0_20px_20px_rgba(34,197,94,1.0)]";
+  if(location.pathname === "/carrinho" || location.pathname === "/pagamento"){
+    const purpleShadowRoutes = ["/carrinho"];
+    const greenShadowRoutes = ["/pagamento"];
+    
+    if (purpleShadowRoutes.includes(location.pathname)) {
+      shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
+    }
+  
+    if (greenShadowRoutes.includes(location.pathname)) {
+      shadowClass = "drop-shadow-[0_20px_20px_rgba(34,197,94,1.0)]";
+    }
+    useEffect(() => {
+      const handleScroll = () => {
+        if (window.scrollY > 0) {
+          setShadowClass("shadow-md");
+        } else {
+          setShadowClass("");
+        }
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, [location.pathname]);
   }
 
   useEffect(() => {
@@ -28,18 +43,6 @@ function Nav() {
       setIsLogged(true);
     }
 
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setShadowClass("shadow-md");
-      } else {
-        setShadowClass("");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   function handleLogout() {
@@ -50,7 +53,7 @@ function Nav() {
 
 
   return(
-    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${shadowClass}`}>
+    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
           <span className="text-white">PERLET</span>
