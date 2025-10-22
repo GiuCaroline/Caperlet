@@ -2,8 +2,32 @@ import '../assets/styles/App.css'
 import { Tag, Shield, ArrowLeft } from "lucide-react"
 import { Handbag } from "phosphor-react"
 import CardCart from '../components/CardCart'
+import {useCandies} from "../hooks/useCandies";
+import { useState, useEffect } from 'react'
 
 function Carrinho(){
+    const [cart, setCart] = useState([]);
+    const { fetchCandies, candies, loading, erro, setCandies } = useCandies();
+    
+        useEffect(() => {
+          const carregaDoces = async () => {
+            const data = await fetchCandies().then(()=>{console.log(candies)});
+            if(data && data.length > 0){
+              const candies = data.map((candy) => {
+                const { id, name, desc, price, image, packageSize, packagePrice } = candy;
+                return { id, name, desc, price, image, packageSize, packagePrice };
+              });
+              setCandies(candies);
+            }
+          };
+          carregaDoces();
+        }, []);
+
+    useEffect(() => {
+        let savedCart = localStorage.getItem("cart") || "[]";
+        setCart(JSON.parse(savedCart));
+        console.log(cart);
+    }, []);
 
     return(
         <div className='bg-(--c3) montserrat-f md:pb-[20%]'>
@@ -21,7 +45,13 @@ function Carrinho(){
                 </div>
                 <section className="bg-(--c3)  flex w-[100%]">
                     <div className='w-[92%] gap-10 flex flex-col'>
-                        <CardCart/>
+                        {cart.length > 0 ? (
+                            cart.map((cartInfo, index) => (
+                                <CardCart key={index} id={cartInfo.id} cartinfo={cartInfo} candy={candies} />
+                            ))
+                        ) : (
+                            <p className='text-white'>Seu carrinho está vazio.</p>
+                        )}
                     </div>
                     <div className='w-[50%] ml-[5%]'>
                         <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
