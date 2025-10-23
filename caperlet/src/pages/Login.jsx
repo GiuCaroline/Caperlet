@@ -27,9 +27,6 @@ function Login() {
             <div className="bg-transparent border-solid border-(--c4) border-2 p-10 rounded-2xl shadow-lg w-[500px]">
                 <h1 className="text-3xl font-bold mb-[5%] text-center text-(--c4)  cursor-default">Faça seu login</h1>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="bg-transparent border-solid border-(--c4) border-2 p-10 rounded-2xl shadow-lg w-[30%]">
-                <h1 className="text-3xl font-bold mb-[5%] text-center text-(--c4)  cursor-default">Faça seu login</h1>
-                <form className="flex flex-col gap-4">
                     <div className="flex items-center gap-3 border-b-(--c4) border-b-2 p-3
                  transition-colors duration-300 focus-within:border-b-white">
                         <Mail className="text-(--c4)" size={25} />

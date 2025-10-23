@@ -57,7 +57,7 @@ function LojaPadrao() {
                 </p>
             </section>
             <section className="bg-(--c3) py-12 flex flex-col items-center w-[100%]">
-              <div className="flex flex-row gap-x-30 gap-y-12 flex-wrap justify-between px-12">
+              <div className="flex flex-row gap-x-30 gap-y-12 flex-wrap justify-center px-12">
                 {candies && candies.length > 0 ? (
                   candies.map((candy) => (
                     <CardDoces key={candy.id} candy={candy} cartAdd={cartAdd} />

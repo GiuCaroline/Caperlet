@@ -53,7 +53,7 @@ function Nav() {
 
 
   return(
-    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
+    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
           <span className="text-white">PERLET</span>

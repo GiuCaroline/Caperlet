@@ -160,7 +160,7 @@ function Carrinho(){
                                 Total
                                 </p>
                                 <p className="text-xl text-(--c8) text-right cursor-default font-bold">
-                                {`R$${((Number(subtotal) - promoValue) + frete).toFixed(2)}`}
+                                {`R$${((Number(subtotal) - (Number(subtotal) * promoValue)) + frete).toFixed(2)}`}
                                 </p>
                             </div>
 
