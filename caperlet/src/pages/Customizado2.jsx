@@ -78,7 +78,7 @@ function Customizado2() {
                     bg-(--c12) border-1 border-(--c12) rounded-md' onClick={()=>{window.location="/customizadoColoracao"}}>Avançar</button>
                   </div>
               </div>
-               <div className='w-[50%] ml-[5%]'>
+              <div className='w-[50%] ml-[5%]'>
                 <div class="p-8 rounded-xl border border-(--c12) bg-transparent w-full flex flex-col">
                   <h1 class="text-4xl font-bold mb-[5%] text-white text-left cursor-default">Sua criação açucarada</h1>
 

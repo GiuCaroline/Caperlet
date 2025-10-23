@@ -7,7 +7,7 @@ function LojaPadrao() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
-            <section className="flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-[100%]">
+            <section className="flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-full">
                 <div className="flex flex-row gap-x-[2rem]">
                     <span className="flex items-center justify-center text-base px-6 py-1.5 bg-(--c4) 
                     text-(--c1) rounded-3xl cursor-pointer gap-x-[0.5rem] font-medium">
@@ -20,20 +20,20 @@ function LojaPadrao() {
                     Customizados
                     </span>
                 </div>
-                <h2 className="text-7xl text-white cursor-default font-extrabold mt-15">PADRÃO</h2>
+                <h2 className="text-7xl text-white cursor-default font-extrabold mt-[5%]">PADRÃO</h2>
                 <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">GOURMET</h2>
-                <p className="text-white cursor-default max-w-2xl text-2xl mt-5 font-light text-center">
+                <p className="text-white cursor-default max-w-2xl text-2xl mt-[3%] font-light text-center">
                 Descubra as coleções da casa, onde a loja se torna uma galeria e cada peça é uma arte comestível.
                 </p>
             </section>
-            <section className="bg-(--c3) py-12 flex flex-col items-center w-[100%]">
-              <div className="flex flex-row gap-x-30 flex-wrap justify-center">
-                <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21rem] border-(--c10) border-1
+            <section className="bg-(--c3) py-12 flex flex-col items-center w-full">
+              <div className="flex flex-row gap-x-30 gap-y-6 flex-wrap justify-center w-full">
+                <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21%] border-(--c10) border-1
                 transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
                     src="/images/BrigadeiroProd.png"
                     alt="Brigadeiro meio amargo"
-                    className="mt-3"
+                    className="mt-[3%]"
                   />
 
                   <div className="p-5">
@@ -41,12 +41,12 @@ function LojaPadrao() {
                       Brigadeiro meio amargo
                     </h2>
 
-                    <p className="text-sm text-(--c11) mb-3 leading-snug font-light cursor-default">
+                    <p className="text-sm text-(--c11) mb-[5%] leading-snug font-light cursor-default">
                       Massa de chocolate suíço meio amargo, finalizado com um chocolate
                       francês em pó.
                     </p>
 
-                    <div className="flex gap-2 mb-4">
+                    <div className="flex gap-2 mb-[6%]">
                       <span className="cursor-pointer flex items-center gap-1 px-5 bg-(--c4) py-1 text-white rounded-lg text-xs font-semibold">
                         <Sparkle size={14} />
                         Unidade
@@ -63,7 +63,7 @@ function LojaPadrao() {
                       <span className="text-xs text-white font-normal cursor-default">por unidade</span>
                     </div>
 
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="flex items-center gap-3 mt-[4%]">
                       <button className="flex items-center justify-center w-7 h-7 
                       rounded-md bg-transparent border-white border-2 text-white  text-lg font-bold cursor-pointer
                       transition hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(255,255,255,0.09)] duration-300">
@@ -78,12 +78,12 @@ function LojaPadrao() {
                     </div>
                   </div>
                 </div>
-                <div className="relative bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[22rem] border-(--c10) border-1
+                <div className="relative bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21%] border-(--c10) border-1
                 transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
                     src="/images/MacaronProd.png"
                     alt="Macaron de Chocolate ao leite"
-                    className="mt-3"
+                    className="mt-[3%]"
                   />
 
                   <div className="p-5">
@@ -91,11 +91,11 @@ function LojaPadrao() {
                       Macaron de chocolate ao leite
                     </h2>
 
-                    <p className="text-sm text-(--c11) mb-3 leading-snug font-light cursor-default">
+                    <p className="text-sm text-(--c11) mb-[5%] leading-snug font-light cursor-default">
                       Feito com farinha de amêndoas e recheado com ganache de chocolate ao leite.
                     </p>
 
-                    <div className="flex gap-2 mb-4">
+                    <div className="flex gap-2 mb-[6%]">
                       <span className="cursor-pointer flex items-center gap-1 px-4 py-1 bg-[rgba(152,92,240,0.1)] text-(--c8)
                        rounded-lg text-xs font-semibold">
                         <Sparkle size={14} />
@@ -114,7 +114,7 @@ function LojaPadrao() {
                       p-1 rounded-full justify-end right-2 absolute">poupe R$20,00</span>
                     </div>
 
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="flex items-center gap-3 mt-[4%]">
                       <button className="flex items-center justify-center w-7 h-7 
                       rounded-md bg-transparent border-white border-2 text-white  text-lg font-bold cursor-pointer
                       transition hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(255,255,255,0.09)] duration-300">
@@ -129,12 +129,12 @@ function LojaPadrao() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21rem] border-(--c10) border-1
+                <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21%] border-(--c10) border-1
                 transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
                     src="/images/MacaronFrutProd.png"
                     alt="Macaron de Frutas Vermelhas"
-                    className="mt-3"
+                    className="mt-[3%]"
                   />
 
                   <div className="p-5">
@@ -142,12 +142,12 @@ function LojaPadrao() {
                       Macaron de frutas vermelhas
                     </h2>
 
-                    <p className="text-xs text-(--c11) mb-3 leading-snug font-light cursor-default">
+                    <p className="text-xs text-(--c11) mb-[5%] leading-snug font-light cursor-default">
                       Massa de amêndoas delicadamente aerada, recheada com ganache de rosas e finalizada
                        com uma rosa artesanal em açúcar.
                     </p>
 
-                    <div className="flex gap-2 mb-4">
+                    <div className="flex gap-2 mb-[6%]">
                       <span className="cursor-pointer flex items-center gap-1 px-5 bg-(--c4) py-1 text-white rounded-lg text-xs font-semibold">
                         <Sparkle size={14} />
                         Unidade
@@ -164,7 +164,7 @@ function LojaPadrao() {
                       <span className="text-xs text-white font-normal cursor-default">por unidade</span>
                     </div>
 
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="flex items-center gap-3 mt-[4%]">
                       <button className="flex items-center justify-center w-7 h-7 
                       rounded-md bg-transparent border-white border-2 text-white  text-lg font-bold cursor-pointer
                       transition hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(255,255,255,0.09)] duration-300">
