@@ -17,7 +17,7 @@ function Cadastro() {
         } 
 
     return(
-        <div className="min-h-screen flex flex-col items-center justify-center bg-(--c1) montserrat-f">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-(--c1) dark:bg-(--c27) montserrat-f">
             <span className='w-[30%] p-2'>
                 <Undo2 onClick={()=>{window.history.back()}} className='text-(--c4) cursor-pointer transition duration-300 transform-cpu hover:scale-150'/>
             </span>
@@ -72,8 +72,8 @@ function Cadastro() {
                     <button className="cursor-pointer bg-(--c4) text-(--c1) py-3 rounded-lg font-bold hover:scale-103 transition">
                         Registrar
                     </button>
-                    <p className="flex text-white cursor-default font-light justify-center">Já tem uma conta? Faça login clicando&nbsp;
-                        <span className="text-(--c4) underline cursor-pointer"><a href="/login">aqui</a></span></p>
+                    <p className="flex dark:text-white text-(--c27) cursor-default font-light justify-center">Já tem uma conta? Faça login clicando&nbsp;
+                        <span className="text-(--c8) hover:text-(--c4) underline cursor-pointer"><a href="/login">aqui</a></span></p>
                     {erro && <p>{erro}</p>}
                 </form>
             </div>

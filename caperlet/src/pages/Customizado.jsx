@@ -7,7 +7,7 @@ function Customizado() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
-            <section className="relative flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-[100%]">
+            <section className="relative flex flex-col items-center bg-linear-to-br from-(--c1) dark:from-(--c27) from-50% to-(--c2) dark:to-(--c30) p-30 w-[100%]">
                 <div className="flex flex-row gap-x-[2rem]">
                     <span onClick={()=>{window.location="/loja"}} className="flex items-center justify-center text-base px-6 py-1.5 bg-[rgba(152,92,240,0.1)]
                     text-(--c8) rounded-3xl cursor-pointer gap-x-[0.5rem] font-medium">
@@ -20,9 +20,9 @@ function Customizado() {
                     Customizados
                     </span>
                 </div>
-                <h2 className="text-7xl text-white cursor-default font-extrabold mt-[5%]">O DOCE DOS</h2>
+                <h2 className="text-7xl dark:text-white text-(--c27) cursor-default font-extrabold mt-[5%]">O DOCE DOS</h2>
                 <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">SONHOS DOCES</h2>
-                <p className="text-white cursor-default max-w-2xl text-2xl mt-[2%] font-light text-center">
+                <p className="dark:text-white text-(--c27) cursor-default max-w-2xl text-2xl mt-[2%] font-light text-center">
                     Design customizado que reflete o seu sabor de forma única em cada detalhe
                 </p>
                 <CaminhoCustom/>

@@ -8,7 +8,7 @@ function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
     const unitPrice = cartinfo.size === 'unit' ? product?.price : product?.packagePrice;
     const cartPrice = Number(unitPrice) || 0;
     return(
-                                <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
+                                <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-[100%]">
                             <div className="flex flex-row gap-6">
                                 <div className="w-[15%] h-[15%] aspect-square rounded-lg overflow-hidden">
                                     <img
@@ -19,8 +19,8 @@ function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <div className='flex justify-between gap-90'>
-                                        <p className='text-white font-bold text-2xl cursor-default'>{product?.name}</p>
-                                        <Trash2 className='text-white cursor-pointer hover:text-red-500 transition duration-300' size={17} onClick={() => onRemove && onRemove(cartinfo.id, cartinfo.size)}/>
+                                        <p className='dark:text-white text-(--c27) font-bold text-2xl cursor-default'>{product?.name}</p>
+                                        <Trash2 className='dark:text-white text-(--c27) cursor-pointer hover:text-red-500 transition duration-300' size={17} onClick={() => onRemove && onRemove(cartinfo.id, cartinfo.size)}/>
                                     </div>
                                     <p className='text-(--c11) text-sm cursor-default'>{product?.desc}</p>
 
@@ -32,13 +32,14 @@ function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
 
                                     <div className="flex items-center gap-3 mt-1">
                                         <button onClick={() => onDecrease && onDecrease(cartinfo.id, cartinfo.size)} className="flex items-center justify-center w-7 h-7 
-                                        rounded-md bg-(--c9) border-white hover:border-(--c8) border-2 transition duration-200 text-white text-lg font-bold cursor-pointer">
-                                            <Minus className="text-white" size={17}/>
+                                        rounded-md bg-transparent dark:border-white border-(--c27) hover:border-(--c8) border-1 transition duration-200 dark:text-white text-(--c27)
+                                         text-lg font-bold cursor-pointer">
+                                            <Minus className="dark:text-white text-(--c27)" size={17}/>
                                         </button>
-                                        <span className="text-white font-medium cursor-default">{cartinfo.quantity}</span>
+                                        <span className="dark:text-white text-(--c27) font-medium cursor-default">{cartinfo.quantity}</span>
                                         <button onClick={() => onIncrease && onIncrease(cartinfo.id, cartinfo.size)} className="flex items-center justify-center w-7 h-7
-                                        rounded-md bg-(--c9) border-white hover:border-(--c8) border-2 transition duration-200 text-white text-lg font-bold cursor-pointer">
-                                            <Plus className="text-white" size={17}/>
+                                        rounded-md bg-transparent dark:border-white border-(--c27) hover:border-(--c8) border-1 transition duration-200 dark:text-white text-(--c27) text-lg font-bold cursor-pointer">
+                                            <Plus className="dark:text-white text-(--c27)" size={17}/>
                                         </button>
                                         
                                         <div className='ml-[70%]'>

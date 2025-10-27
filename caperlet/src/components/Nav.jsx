@@ -14,7 +14,7 @@ function Nav() {
     const greenShadowRoutes = ["/pagamento"];
     
     if (purpleShadowRoutes.includes(location.pathname)) {
-      shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
+      shadowClass = "drop-shadow-[0_20px_20px_rgba(215,92,240,1.0)]";
     }
   
     if (greenShadowRoutes.includes(location.pathname)) {
@@ -53,19 +53,19 @@ function Nav() {
 
 
   return(
-    <nav className={`bg-(--c3) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
+    <nav className={`dark:bg-(--c3) bg-(--c24) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
         <h1 className="text-4xl font-extrabold cursor-default">
           <span className="text-(--c4)">CA</span>
-          <span className="text-white">PERLET</span>
+          <span className="dark:text-white text-(--c27)">PERLET</span>
         </h1>
-        <div className="text-white flex items-center text-[1.2rem] list-none gap-x-[5rem]">
+        <div className="dark:text-white text-(--c27) flex items-center text-[1.2rem] list-none gap-x-[5rem]">
           <li className="cursor-pointer"><a href="/cadastroProduto">Cadastro Produtos</a></li>
           <li className="cursor-pointer"><a href="/loja">Loja</a></li>
           <li className="cursor-pointer"><a href="">Sobre nós</a></li>
           <li className="cursor-pointer"><a href="#footer">Contato</a></li>
         </div>
         <div className="flex gap-x-[1rem] items-center">
-          <Sun size={23} className="text-white cursor-pointer"/>
+          <Sun size={23} className="dark:text-white text-(--c27) cursor-pointer"/>
           <button onClick={()=>{isLogged? handleLogout(): window.location.href="/login"}}  className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
             {isLogged ? 
               <><LogIn className="text-(--c4) w-8"/> <span className="text-(--c4) pr-2">Logout</span></>
@@ -73,7 +73,7 @@ function Nav() {
               <><LogIn className="text-(--c4) w-8"/> <span className='text-(--c4) pr-2'>Login</span></>
              }
           </button>
-          <Handbag onClick={()=>{window.location="/carrinho"}} className="text-white cursor-pointer" size={23}/>
+          <Handbag onClick={()=>{window.location="/carrinho"}} className="dark:text-white text-(--c27) cursor-pointer" size={23}/>
         </div>
     </nav>
     )

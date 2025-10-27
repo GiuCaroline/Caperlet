@@ -8,7 +8,7 @@ import { Handbag } from "phosphor-react"
 
 function Pagamento() {
     return(
-        <div className='bg-(--c3) montserrat-f md:pb-[20%]'>
+        <div className='dark:bg-(--c3) bg-(--c24) montserrat-f md:pb-[20%]'>
             <main className="flex-1 flex p-15 px-25 flex-col">
                 <div onClick={()=>{window.history.back()}} className='flex items-center gap-2 cursor-pointer w-[13%]'>
                     <ArrowLeft className='text-(--c20)'/>
@@ -17,82 +17,90 @@ function Pagamento() {
                 <div className='mb-8 mt-3 flex '>
                     <Handbag size={55} className="bg-(--c22) rounded-full p-2" color='#15D33E' />
                     <div className='flex flex-col ml-3'>
-                        <h2 className='text-white font-bold text-2xl'>Finalizando pedido</h2>
-                        <p className='text-white font-light'>Confira os dados de envio e pagamento</p>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-2xl'>Finalizando pedido</h2>
+                        <p className='dark:text-white text-(--c27) font-light'>Confira os dados de envio e pagamento</p>
                     </div>
                 </div>
-                <section className="bg-(--c3) flex w-[100%]">
+                <section className="dark:bg-(--c3) bg-(--c24) flex w-full">
                     <div className='w-[92%] gap-10 flex flex-col'>
-                        <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
+                        <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-full">
                             <div className="flex flex-col">
-                                <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de envio</h1>
+                                <h1 className="text-3xl font-bold mb-3 dark:text-white text-(--c27) text-left cursor-default">Informações de envio</h1>
 
                                 <div className='flex gap-10 flex-row w-full'>
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Nome</p>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Nome</p>
                                         <div className="relative w-full">
                                             <User size={23} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                            <input id="nome" className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                            <input id="nome" className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-10 py-1'></input>
                                         </div>
                                     </div>
                                     
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Sobrenome</p>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Sobrenome</p>
                                         <div className="relative w-full">
-                                            <input id='sobrenome' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-3 py-1'></input>
+                                            <input id='sobrenome' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-3 py-1'></input>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-10 flex-row w-full mt-[2%]'>
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Email</p>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Email</p>
                                         <div className="relative w-full">
                                             <Mail size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                            <input id='email' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                            <input id='email' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-10 py-1'></input>
                                         </div>
                                     </div>
                                     
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Telefone</p>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Telefone</p>
                                         <div className="relative w-full">
                                             <Phone size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                            <input id='telefone' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                            <input id='telefone' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-10 py-1'></input>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='flex flex-col mt-[2%]'>
-                                    <p className='text-white ml-1 font-semibold'>Endereço</p>
+                                    <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Endereço</p>
                                     <div className="relative w-full">
                                         <MapPinned size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                        <input id='endereco' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                        <input id='endereco' className='w-full dark:text-white text-(--27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-10 py-1'></input>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-10 flex-row w-full mt-[2%]'>
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Cidade</p>
-                                        <input id='cidade' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-3 py-1'></input>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Cidade</p>
+                                        <input id='cidade' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-3 py-1'></input>
                                     </div>
                                     
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Estado</p>
-                                        <input id='estado' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-3 py-1'></input>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Estado</p>
+                                        <input id='estado' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-3 py-1'></input>
                                     </div>
 
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>CEP</p>
-                                        <input id='cep' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-3 py-1'></input>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>CEP</p>
+                                        <input id='cep' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-3 py-1'></input>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
-                        <div className="p-8 rounded-xl border border-[#2a2a2a] bg-transparent w-[100%]">
+                        <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-full">
                             <div className="flex flex-col">
-                                <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Informações de pagamento</h1>
+                                <h1 className="text-3xl font-bold mb-3 dark:text-white text-(--c27) text-left cursor-default">Informações de pagamento</h1>
 
                                 <div className='flex flex-row gap-3'>
                                     <button className='cursor-pointer border-1 border-(--c23) bg-(--c23) text-(--c3) rounded-lg w-[10%] text-sm'>Crédito</button>
@@ -101,34 +109,38 @@ function Pagamento() {
                                 </div>
 
                                 <div className='flex flex-col mt-[2%]'>
-                                    <p className='text-white ml-1 font-semibold'>Número do cartão</p>
+                                    <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Número do cartão</p>
                                     <div className="relative w-full">
                                         <CreditCard size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                        <input id='cartao' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                        <input id='cartao' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-10 py-1'></input>
                                     </div>
                                 </div>
 
                                 <div className='flex gap-10 flex-row w-full mt-[2%]'>
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>Data de expiração</p>
+                                        <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Data de expiração</p>
                                         <div className="relative w-full">
                                             <Calendar size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                            <input id='expiracao' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                            <input id='expiracao' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-10 py-1'></input>
                                         </div>
                                     </div>
                                     
                                     <div className='flex flex-col w-full'>
-                                        <p className='text-white ml-1 font-semibold'>CVV</p>
+                                        <p className='dark:text-white text-(--c27)  ml-1 font-semibold'>CVV</p>
                                         <div className="relative w-full">
                                             <Lock size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                            <input id='cvv' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-10 py-1'></input>
+                                            <input id='cvv' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                            border-(--c25) rounded-lg px-10 py-1'></input>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className='flex flex-col mt-[2%]'>
-                                    <p className='text-white ml-1 font-semibold'>Nome como está no cartão</p>
-                                    <input id='nomeCard' className='w-[100%] text-white border-1 border-(--c10) rounded-lg px-3 py-1'></input>
+                                    <p className='dark:text-white text-(--c27) ml-1 font-semibold'>Nome como está no cartão</p>
+                                    <input id='nomeCard' className='w-full dark:text-white text-(--c27) border-1 dark:border-(--c10)
+                                        border-(--c25) rounded-lg px-3 py-1'></input>
                                 </div>
 
                             </div>
@@ -136,22 +148,23 @@ function Pagamento() {
 
                     </div>
                     <div className='w-[50%] ml-[5%]'>
-                        <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
-                            <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Resumo do pedido</h1>
+                        <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-full">
+                            <h1 className="text-3xl font-bold mb-3 dark:text-white text-(--c27) text-left cursor-default">Resumo do pedido</h1>
                             
                             <div className='flex'>
                                 <div className="relative w-full">
                                     <Tag size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                    <input placeholder='código promocional' className='w-[95%] text-[#969696] border-1 border-(--c10) rounded-lg px-9 py-[0.7px]'></input>
+                                    <input placeholder='código promocional' className='w-[95%] placeholder:text-[#969696] text-(--c27) dark:text-white border-1
+                                    dark:border-(--c10) border-(--c25) rounded-lg px-9 py-[0.7px]'></input>
                                 </div>
 
                                 <button className='border-1 border-(--c23) cursor-pointer rounded-lg text-(--c23) text-sm px-4'>Aplicar</button>
                             </div>
                             
-                            <div className="w-full mt-[5%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
+                            <div className="w-full mt-[5%] flex-1 h-[2px] dark:bg-(--c10) bg-(--c25) rounded-full"></div>
 
                             <div className="grid grid-cols-2 mt-[2%]">
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 Subtotal
                                 </p>
                                 <p className="text-base text-[#969696] text-right cursor-default">
@@ -160,7 +173,7 @@ function Pagamento() {
                             </div>
 
                             <div className="grid grid-cols-2 mt-1">
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 Código promocional
                                 </p>
                                 <p className="text-base text-[#969696] text-right cursor-default">
@@ -169,7 +182,7 @@ function Pagamento() {
                             </div>
 
                             <div className="grid grid-cols-2 mt-1">
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 Frete
                                 </p>
                                 <p className="text-base text-[#969696] text-right cursor-default">
@@ -177,10 +190,10 @@ function Pagamento() {
                                 </p>
                             </div>
                             
-                            <div className="w-full mt-[2%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
+                            <div className="w-full mt-[2%] flex-1 h-[2px] dark:bg-(--c10) bg-(--c25) rounded-full"></div>
 
                             <div className='grid grid-cols-2 mt-[2%]'>
-                                <p className="text-xl text-white text-left cursor-default font-bold">
+                                <p className="text-xl dark:text-white text-(--c27) text-left cursor-default font-bold">
                                 Total
                                 </p>
                                 <p className="text-xl text-(--c23) text-right cursor-default font-bold">
@@ -190,8 +203,8 @@ function Pagamento() {
 
                             <div className='flex items-center flex-col'>
                                 <button className='cursor-pointer bg-(--c23) text-white text-xl rounded-lg w-full py-2 font-semibold mt-[2%]'>Finalizar pedido</button>
-                                <p className='cursor-default text-white text-[11px] font-light flex items-end mt-[1%]'>
-                                    <Shield className='text-white' size={18}/>Suas informações de pagamento são encripitadas como forma de segurança</p>
+                                <p className='cursor-default dark:text-white text-(--c27) text-[11px] font-light flex items-end mt-[1%]'>
+                                    <Shield className='dark:text-white text-(--c27)' size={18}/>Suas informações de pagamento são encripitadas como forma de segurança</p>
                             </div>
                         </div>
                     </div>

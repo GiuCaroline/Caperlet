@@ -88,46 +88,46 @@ function Carrinho(){
     }
 
     return(
-        <div className='bg-(--c3) montserrat-f md:pb-[20%]'>
+        <div className='dark:bg-(--c3) bg-(--c24) montserrat-f md:pb-[20%]'>
             <main className="flex-1 flex p-15 px-25 flex-col">
                 <div  onClick={()=>{window.history.back()}} className='text-(--c20) flex items-center gap-2 cursor-pointer w-[14%] transition duration-300 transform-cpu hover:text-(--c16)'>
                     <ArrowLeft />
                     <p>Continuar comprando</p>
                 </div>
                 <div className='mb-[3%] mt-[1%] flex '>
-                    <Handbag size={55} className="bg-(--c21) rounded-full p-2" color='#C09AF8' />
+                    <Handbag size={55} className="bg-(--c21) rounded-full p-2" color='#eb54ff' />
                     <div className='flex flex-col ml-[2%]'> 
-                        <h2 className='text-white font-bold text-2xl'>Carrinho de compras</h2>
-                        <p className='text-white font-light'>{cart.length} itens no seu carrinho</p>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-2xl'>Carrinho de compras</h2>
+                        <p className='dark:text-white text-(--c27) font-light'>{cart.length} itens no seu carrinho</p>
                     </div>
                 </div>
-                <section className="bg-(--c3)  flex w-[100%]">
+                <section className="dark:bg-(--c3) bg-(--c24) flex w-[100%]">
                     <div className='w-[92%] gap-10 flex flex-col'>
                         {cart.length > 0 ? (
                             cart.map((cartInfo, index) => (
                                 <CardCart key={index} id={cartInfo.id} cartinfo={cartInfo} candy={candies} onIncrease={handleIncrease} onDecrease={handleDecrease} onRemove={handleRemove} />
                             ))
                         ) : (
-                            <p className='text-white'>Seu carrinho está vazio.</p>
+                            <p className='dark:text-white text-(--c27)'>Seu carrinho está vazio.</p>
                         )}
                     </div>
                     <div className='w-[50%] ml-[5%]'>
-                        <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
-                            <h1 className="text-3xl font-bold mb-3 text-white text-left cursor-default">Resumo do pedido</h1>
+                        <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-[100%]">
+                            <h1 className="text-3xl font-bold mb-3 dark:text-white text-(--c27) text-left cursor-default">Resumo do pedido</h1>
                             
                             <div className='flex'>
                                 <div className="relative w-full">
                                     <Tag size={17} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#969696]" />
-                                    <input placeholder='código promocional' type='text' name='promoCode' id='promoCode' className='placeholder:text-[#969696] w-[95%] text-white border-1 border-(--c10) rounded-lg px-9 py-[0.7px]'></input>
+                                    <input placeholder='código promocional' type='text' name='promoCode' id='promoCode' className='placeholder:text-[#969696] w-[95%] dark:text-white text-(--c27) border-1 dark:border-(--c10) border-(--c25) rounded-lg px-9 py-[0.7px]'></input>
                                 </div>
 
                                 <button onClick={()=>{promotionCode()}} className='border-1 border-(--c8) cursor-pointer rounded-lg text-(--c8) text-sm px-4'>Aplicar</button>
                             </div>
                             
-                            <div className="w-full mt-[5%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
+                            <div className="w-full mt-[5%] flex-1 h-[2px] dark:bg-(--c10) bg-(--c25) rounded-full"></div>
 
                             <div className="grid grid-cols-2 mt-[2%]">
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 Subtotal
                                 </p>
                                 <p className="text-base text-[#969696] text-right cursor-default">
@@ -136,7 +136,7 @@ function Carrinho(){
                             </div>
 
                             <div className={`grid grid-cols-2 mt-1 ${promoValue > 0 ? '' : 'hidden'}`}>
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 {`Código ativo`}
                                 </p>
                                 <p className="text-base text-[#969696] text-right cursor-default">
@@ -145,7 +145,7 @@ function Carrinho(){
                             </div>
 
                             <div className="grid grid-cols-2 mt-1">
-                                <p className="text-base text-white text-left cursor-default">
+                                <p className="text-base dark:text-white text-(--c27) text-left cursor-default">
                                 Frete
                                 </p>
                                 <p className={`text-base text-right cursor-default ${frete === 0 ? 'font-bold text-(--c8)' : 'text-[#969696]'}`}>
@@ -153,10 +153,10 @@ function Carrinho(){
                                 </p>
                             </div>
                             
-                            <div className="w-full mt-[2%] flex-1 h-[2px] bg-(--c10) rounded-full"></div>
+                            <div className="w-full mt-[2%] flex-1 h-[2px] dark:bg-(--c10) bg-(--c25) rounded-full"></div>
 
                             <div className='grid grid-cols-2 mt-[2%]'>
-                                <p className="text-xl text-white text-left cursor-default font-bold">
+                                <p className="text-xl dark:text-white text-(--c27) text-left cursor-default font-bold">
                                 Total
                                 </p>
                                 <p className="text-xl text-(--c8) text-right cursor-default font-bold">
@@ -166,8 +166,8 @@ function Carrinho(){
 
                             <div className='flex items-center flex-col'>
                                 <button className='cursor-pointer bg-(--c8) text-white text-xl rounded-lg w-full py-2 font-semibold mt-[2%]'  onClick={()=>{window.location="/pagamento"}}>Continuar pedido</button>
-                                <p className='cursor-default text-white text-[11px] font-light flex items-end mt-[1%]'>
-                                    <Shield className='text-white' size={18}/>Suas informações de pagamento são encripitadas como forma de segurança</p>
+                                <p className='cursor-default dark:text-white text-(--c27) text-[11px] font-light flex items-end mt-[1%]'>
+                                    <Shield className='dark:text-white text-(--c27)' size={18}/>Suas informações de pagamento são encripitadas como forma de segurança</p>
                             </div>
                         </div>
                     </div>

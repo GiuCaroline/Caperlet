@@ -20,7 +20,7 @@ function Login() {
     } 
 
     return(
-        <div className="min-h-screen flex flex-col items-center justify-center bg-(--c1) montserrat-f">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-(--c1) dark:bg-(--c27) montserrat-f">
             <span className='w-[30%] p-2'>
                 <Undo2 onClick={()=>{window.history.back()}} className='text-(--c4) cursor-pointer transition duration-300 transform-cpu hover:scale-150'/>
             </span>
@@ -55,8 +55,8 @@ function Login() {
                     <button disabled={loading} className="cursor-pointer bg-(--c4) text-(--c1) py-3 rounded-lg font-bold hover:scale-103 transition">
                         Entrar
                     </button>
-                    <p className="flex text-white cursor-default font-light justify-center">Não tem uma conta? Faça cadastro clicando&nbsp;
-                        <span className="text-(--c4) underline cursor-pointer"><a href="/cadastro">aqui</a></span></p>
+                    <p className="flex dark:text-white text-(--c27) cursor-default font-light justify-center">Não tem uma conta? Faça cadastro clicando&nbsp;
+                        <span className="text-(--c8) underline cursor-pointer hover:text-(--c4)"><a href="/cadastro">aqui</a></span></p>
                     {erro && <p>{erro}</p>}
                 </form>
             </div>

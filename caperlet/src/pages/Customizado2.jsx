@@ -20,9 +20,9 @@ function Customizado2() {
                     Customizados
                     </span>
                 </div>
-                <h2 className="text-7xl text-white cursor-default font-extrabold mt-[5%]">O DOCE DOS</h2>
+                <h2 className="text-7xl dark:text-white text-(--c27) cursor-default font-extrabold mt-[5%]">O DOCE DOS</h2>
                 <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">SONHOS DOCES</h2>
-                <p className="text-white cursor-default max-w-2xl text-2xl mt-[2%] font-light text-center">
+                <p className="dark:text-white text-(--c27) cursor-default max-w-2xl text-2xl mt-[2%] font-light text-center">
                     Design customizado que reflete o seu sabor de forma única em cada detalhe
                 </p>
                 <CaminhoCustom/>

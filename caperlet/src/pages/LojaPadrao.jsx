@@ -37,7 +37,7 @@ function LojaPadrao() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">     
         <main className="flex-1 flex flex-col">
-            <section className="flex flex-col items-center bg-linear-to-br from-(--c1) from-50% to-(--c2) p-30 w-full">
+            <section className="flex flex-col items-center bg-linear-to-br from-(--c1)  dark:from-(--c27) from-50% to-(--c2) dark:to-(--c30) p-30 w-full">
                 <div className="flex flex-row gap-x-[2rem]">
                     <span className="flex items-center justify-center text-base px-6 py-1.5 bg-(--c4) 
                     text-(--c1) rounded-3xl cursor-pointer gap-x-[0.5rem] font-medium">
@@ -50,20 +50,20 @@ function LojaPadrao() {
                     Customizados
                     </span>
                 </div>
-                <h2 className="text-7xl text-white cursor-default font-extrabold mt-[5%]">PADRÃO</h2>
+                <h2 className="text-7xl text-(--c27) dark:text-white cursor-default font-extrabold mt-[5%]">PADRÃO</h2>
                 <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">GOURMET</h2>
-                <p className="text-white cursor-default max-w-2xl text-2xl mt-[3%] font-light text-center">
+                <p className="text-(--c27) dark:text-white cursor-default max-w-2xl text-2xl mt-[3%] font-light text-center">
                 Descubra as coleções da casa, onde a loja se torna uma galeria e cada peça é uma arte comestível.
                 </p>
             </section>
-            <section className="bg-(--c3) py-12 flex flex-col items-center w-[100%]">
+            <section className="dark:bg-(--c3) bg-(--c24) py-12 flex flex-col items-center w-full">
               <div className="flex flex-row gap-x-30 gap-y-12 flex-wrap justify-center px-12">
                 {candies && candies.length > 0 ? (
                   candies.map((candy) => (
                     <CardDoces key={candy.id} candy={candy} cartAdd={cartAdd} />
                   ))
                 ) : (
-                  <p className="text-white">Nenhum doce encontrado.</p>
+                  <p className="dark:text-white text-(--c27)">Nenhum doce encontrado.</p>
                 )}
               </div>
               
