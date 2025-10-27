@@ -9,9 +9,6 @@ import Login from "./pages/Login.jsx"
 import Cadastro from "./pages/Cadastro.jsx"
 import LojaPadrao from "./pages/LojaPadrao.jsx"
 import Customizado from "./pages/Customizado.jsx"
-import Customizado2 from "./pages/Customizado2.jsx"
-import Customizado3 from './pages/Customizado3.jsx'
-import Customizado4 from "./pages/Customizado4.jsx"
 import Carrinho from "./pages/Carrinho.jsx"
 import Pagamento from "./pages/Pagamento.jsx"
 
@@ -36,9 +33,6 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/loja" element={<LojaPadrao />} />
         <Route path="/customizado" element={<Customizado />} />
-        <Route path="/customizadoSabor" element={<Customizado2 />} />
-        <Route path="/customizadoColoracao" element={<Customizado3 />} />
-        <Route path="/customizadoPacote" element={<Customizado4 />} />
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/pagamento" element={<Pagamento />} />
       </Routes>

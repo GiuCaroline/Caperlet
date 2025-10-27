@@ -10,22 +10,18 @@ function Nav() {
   let shadowClass = "";
   
   if(location.pathname === "/carrinho" || location.pathname === "/pagamento"){
-    const purpleShadowRoutes = ["/carrinho"];
-    const greenShadowRoutes = ["/pagamento"];
+    const purpleShadowRoutes = ["/carrinho", "/pagamento"];
     
     if (purpleShadowRoutes.includes(location.pathname)) {
       shadowClass = "drop-shadow-[0_20px_20px_rgba(152,92,240,1.0)]";
     }
   
-    if (greenShadowRoutes.includes(location.pathname)) {
-      shadowClass = "drop-shadow-[0_20px_20px_rgba(34,197,94,1.0)]";
-    }
     useEffect(() => {
       const handleScroll = () => {
         if (window.scrollY > 0) {
-          setShadowClass("shadow-md");
+          shadowClass("shadow-md");
         } else {
-          setShadowClass("");
+          shadowClass("");
         }
       };
     
