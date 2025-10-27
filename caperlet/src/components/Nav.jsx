@@ -59,7 +59,7 @@ function Nav() {
           <span className="text-white">PERLET</span>
         </h1>
         <div className="text-white flex items-center text-[1.2rem] list-none gap-x-[5rem]">
-          <li className="cursor-pointer"><a href="/">Home</a></li>
+          <li className="cursor-pointer"><a href="/cadastroProduto">Cadastro Produtos</a></li>
           <li className="cursor-pointer"><a href="/loja">Loja</a></li>
           <li className="cursor-pointer"><a href="">Sobre nós</a></li>
           <li className="cursor-pointer"><a href="#footer">Contato</a></li>

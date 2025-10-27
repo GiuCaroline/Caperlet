@@ -49,15 +49,15 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
 
-  useEffect(() => {
-    if (!isAutoPlaying || !candies || candies.length === 0) return
+//  useEffect(() => {
+//    if (!isAutoPlaying || !candies || candies.length === 0) return
 
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % candies.length)
-    }, 5000)
+//    const interval = setInterval(() => {
+//      setCurrentSlide((prev) => (prev + 1) % candies.length)
+//    }, 5000)
 
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, candies])
+//    return () => clearInterval(interval)
+//  }, [isAutoPlaying, candies])
 
   useEffect(() => {
     fetchCandies();
@@ -87,7 +87,7 @@ function Home() {
     return(
       <div className="min-h-screen relative flex flex-wrap justify-center montserrat-f overflow-hidden">
         {/* Hero/carrossel: altura definida para evitar que os slides sobreponham o conteúdo abaixo */}
-        <div className='relative w-full h-[100vh] bg-linear-to-br from-(--c1) from-50% to-(--c2)'>
+        <div className='relative w-full h-[110vh] bg-linear-to-br from-(--c1) from-50% to-(--c2)'>
           <div className="relative w-full h-[80vh] md:h-[80vh]">
             {(candies || []).map((candy, index) => (
               <div
@@ -102,13 +102,13 @@ function Home() {
               >   
                 <main className="relative flex-1 flex flex-row items-start justify-between p-6">
                   <div className="p-[8%] flex flex-col">
-                    <span className="justify-center flex items-center text-lg px-6 mb-[4%] w-[35%] py-1.5 bg-(--c4) 
+                    <span className="justify-center flex items-center text-lg px-6 mb-[4%] w-[40%] py-1.5 bg-(--c4) 
                     text-white rounded-3xl cursor-default gap-x-[1rem]">
                       <Star className="w-[14%] stroke-white fill-white" />
                       Robusto e ousado
                     </span>
 
-                    <h2 className="text-8xl text-(--c4) cursor-default font-extrabold">{candy.name.toUpperCase()}</h2>
+                    <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">{candy.name.toUpperCase()}</h2>
                     <p className="text-(--c5) cursor-default max-w-2xl text-xl">
                       {candy.desc}
                     </p>
@@ -135,24 +135,28 @@ function Home() {
                     <img 
                       src={candy.image} 
                       alt={candy.name || "Doce"} 
-                      className="shadow-lg max-w-md object-cover h-[800px] rounded-lg"
+                      className="shadow-lg max-w-md object-cover h-[750px] rounded-lg"
                     />
                   </div>
                   
                 </main>
               </div>))}
           </div>
-              <div className="absolute bottom-30 left-43 flex flex-row gap-x-[1rem] items-center mt-[4rem]">
-                      <p className="text-(--c6) text-[1.2rem] cursor-default">{`${currentSlide + 1} / ${candies.length}`}</p>
-                      <button onClick={()=>{prevSlide()}} className="flex items-center p-2 bg-black opacity-[80%]
-                      text-white rounded-full cursor-pointer">
-                        <ChevronLeft className="text-(--c7)" size={28}/>
-                      </button>
-                      <button onClick={()=>{nextSlide()}} className="flex items-center p-2 bg-black opacity-[80%]
-                      text-white rounded-full cursor-pointer">
-                        <ChevronRight className="text-(--c7)" size={28}/>
-                      </button>
-                    </div>
+
+           <div className="absolute mt-[5%] left-[14%] -translate-x-1/2 flex items-center gap-4">
+            <p className="text-(--c6) text-[1.2rem] cursor-default">
+              {`${currentSlide + 1} / ${candies.length}`}
+            </p>
+
+            <button onClick={prevSlide} className="p-2 bg-black/80 text-white rounded-full">
+              <ChevronLeft size={28}/>
+            </button>
+
+            <button onClick={nextSlide} className="p-2 bg-black/80 text-white rounded-full">
+              <ChevronRight size={28}/>
+            </button>
+          </div>
+
         </div>
   {/* Seção de depoimentos: não usar absolute para ficar abaixo do hero */}
   <section className="w-full flex flex-col items-center justify-center py-16 px-6 md:px-20 text-center bg-(--c3) overflow-hidden">
