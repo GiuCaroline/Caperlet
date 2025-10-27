@@ -1,10 +1,10 @@
 import '../assets/styles/App.css'
-import { Sun, LogIn } from "lucide-react"
+import { Sun, Moon, LogIn } from "lucide-react"
 import { Handbag } from "phosphor-react"
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
-function Nav() {
+function Nav({darkMode, isDark}) {
   const location = useLocation();
   const [isLogged, setIsLogged] = useState(false);
   let shadowClass = "";
@@ -61,7 +61,13 @@ function Nav() {
           <li className="cursor-pointer"><a href="#footer">Contato</a></li>
         </div>
         <div className="flex gap-x-[1rem] items-center">
-          <Sun size={23} className="dark:text-white text-(--c27) cursor-pointer"/>
+          <button onClick={()=>{darkMode()}}>
+            {isDark ? 
+            <Sun size={23} className="dark:text-white text-(--c27) cursor-pointer"/>
+            :
+            <Moon size={23} className="dark:text-white text-(--c27) cursor-pointer"/>
+            }
+          </button>
           <button onClick={()=>{isLogged? handleLogout(): window.location.href="/login"}}  className="p-[0.2rem] flex items-center w-25 gap-x-1 bg-transparent border-2 border-solid text-(--c4) rounded-4xl cursor-pointer">
             {isLogged ? 
               <><LogIn className="text-(--c4) w-8"/> <span className="text-(--c4) pr-2">Logout</span></>
