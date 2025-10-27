@@ -11,6 +11,7 @@ import LojaPadrao from "./pages/LojaPadrao.jsx"
 import Customizado from "./pages/Customizado.jsx"
 import Carrinho from "./pages/Carrinho.jsx"
 import Pagamento from "./pages/Pagamento.jsx"
+import CadasProd from "./pages/CadasProd.jsx"
 
 const hideNavPages = ["/login", "/cadastro"];
 const showNav = !hideNavPages.includes(location.pathname);
@@ -35,6 +36,7 @@ function App() {
         <Route path="/customizado" element={<Customizado />} />
         <Route path="/carrinho" element={<Carrinho />} />
         <Route path="/pagamento" element={<Pagamento />} />
+        <Route path="/cadastroProduto" element={<CadasProd />} />
       </Routes>
       {showFooter && <Footer />}
     </Router>

@@ -26,7 +26,7 @@ function CardDoces({candy, loading, erro, cartAdd}) {
     }
 
     return(
-        <div className="bg-(--c9) rounded-xl shadow-lg overflow-hidden w-[21rem] border-(--c10) border-1
+        <div className="dark:bg-(--c9) bg-(--c28) rounded-xl shadow-lg overflow-hidden w-[21rem] dark:border-(--c10) border-(--c24) border-1
                 transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
                     src={image}
@@ -35,7 +35,7 @@ function CardDoces({candy, loading, erro, cartAdd}) {
                   />
 
                   <div className="p-5">
-                    <h2 className="text-xl font-bold text-white mb-1 cursor-default">
+                    <h2 className="text-xl font-bold dark:text-white text-(--c27) mb-1 cursor-default">
                       {loading && "Carregando..."}
                       {erro && `Erro: ${erro}`}
                       {!loading && !erro && name}
@@ -61,20 +61,20 @@ function CardDoces({candy, loading, erro, cartAdd}) {
                       </label>
                     </div>
 
-                    <div className="text-white font-bold text-2xl cursor-default">
+                    <div className="dark:text-white text-(--c27) font-bold text-2xl cursor-default">
                       {formatPrice(actualPrice)}
-                      <span className="text-xs text-white font-normal cursor-default"> por {selectedSize === "unit" ? "unidade" : "pacote"}</span>
+                      <span className="text-xs dark:text-white text-(--c27) font-normal cursor-default"> por {selectedSize === "unit" ? "unidade" : "pacote"}</span>
                     </div>
 
                     <div className="flex items-center gap-3 mt-3">
                       <button onClick={()=>{decreaseQuantity()}} className="flex items-center justify-center w-7 h-7 
-                      rounded-md bg-transparent border-white border-2 text-white  text-lg font-bold cursor-pointer
+                      rounded-md bg-transparent dark:border-white border-(--c27) border-2 dark:text-white text-(--c27) text-lg font-bold cursor-pointer
                       transition hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(255,255,255,0.09)] duration-300">
                         <Minus/>
                       </button>
-                      <span className="text-white font-medium cursor-default">{quantity}</span>
+                      <span className="dark:text-white text-(--c27) font-medium cursor-default">{quantity}</span>
                       <button onClick={()=>{increaseQuantity()}} className="flex items-center justify-center w-7 h-7
-                      rounded-md bg-transparent border-white border-2 text-white text-lg font-bold cursor-pointer
+                      rounded-md bg-transparent dark:border-white border-(--c27) border-2 dark:text-white text-(--c27) text-lg font-bold cursor-pointer
                       transition hover:scale-[1.02] hover:shadow-[0_6px_20px_rgba(255,255,255,0.09)] duration-300">
                         <Plus/>
                       </button>
