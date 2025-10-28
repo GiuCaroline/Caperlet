@@ -44,12 +44,13 @@ function Nav({darkMode, isDark}) {
   function handleLogout() {
     localStorage.removeItem("userEmail");
     localStorage.removeItem("userPassword");
+    localStorage.removeItem("userAdmin")
     setIsLogged(false);
   }
 
 
   return(
-    <nav className={`dark:bg-(--c3) bg-(--c24) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
+    <nav className={`dark:bg-(--c32) bg-(--c24) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
         <a href="/"> 
           <h1 className="text-4xl font-extrabold cursor-default cursor-pointer">
             <span className="text-(--c4)">CA</span>
@@ -57,10 +58,20 @@ function Nav({darkMode, isDark}) {
           </h1>
         </a>
         <div className="dark:text-white text-(--c27) flex items-center text-[1.2rem] list-none gap-x-[5rem]">
-          <li className="cursor-pointer"><a href="/cadastroProduto">Cadastro Produtos</a></li>
-          <li className="cursor-pointer"><a href="/loja">Loja</a></li>
-          <li className="cursor-pointer"><a href="">Sobre nós</a></li>
-          <li className="cursor-pointer"><a href="#footer">Contato</a></li>
+          {localStorage.getItem("userAdmin") && 
+          <li className="cursor-pointer relative flex justify-center">
+            <a href="/cadastroProduto" className=''>Cadastro Produtos</a>
+            {location.pathname == "/cadastroProduto" && <div className="h-[4px] bottom-[-0.2rem] absolute w-full bg-(--c26) rounded-full cursor-default"></div>}
+          </li>}
+          <li className="cursor-pointer relative flex justify-center">
+            <a href="/loja">Loja</a>
+            {(location.pathname == "/loja" || location.pathname == "/customizado") && <div className="h-[4px] bottom-[-0.2rem] absolute w-full bg-(--c26) rounded-full cursor-default"></div>}
+          </li>
+          <li className="cursor-pointer relative flex justify-center">
+            <a href="">Sobre nós</a>
+            {location.pathname == "/sobre" && <div className="h-[4px] bottom-[-0.2rem] absolute w-full bg-(--c26) rounded-full cursor-default"></div>}
+          </li>
+          <li className="cursor-pointer relative flex justify-center"><a href="#footer">Contato</a></li>
         </div>
         <div className="flex gap-x-[1rem] items-center">
           <button onClick={()=>{darkMode()}}>

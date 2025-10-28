@@ -159,7 +159,7 @@ function Home() {
 
           </div>
     {/* Seção de depoimentos: não usar absolute para ficar abaixo do hero */}
-    <section className="w-full flex flex-col items-center justify-center py-16 px-6 md:px-20 text-center dark:bg-(--c3) bg-(--c24) overflow-hidden">
+    <section className="w-full flex flex-col items-center justify-center py-16 px-6 md:px-20 text-center dark:bg-(--c32) bg-(--c24) overflow-hidden">
             
             <div className=" relative flex items-center justify-center gap-4">
               <div className="h-[1px] w-10 bg-(--c4) opacity-60 mb-[9%]"></div>
@@ -225,7 +225,7 @@ function Home() {
                   </div>
                 ))}
               </div>
-
+                
               {/* 🔽 Pontinhos de navegação (fora do carrossel) */}
               <div className="flex justify-center gap-2 mt-[10%]">
                 {testimonials.map((_, i) => (

@@ -15,6 +15,7 @@ function Login() {
         if (user) {
             localStorage.setItem("userEmail", email);
             localStorage.setItem("userPassword", senha);
+            localStorage.setItem("userAdmin", user.admin);
             location.href = "/loja"
         };
     } 

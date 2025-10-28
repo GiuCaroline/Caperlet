@@ -19,10 +19,35 @@ function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
                                 </div>
                                 <div className='flex flex-col w-full'>
                                     <div className='flex justify-between gap-90'>
-                                        <p className='dark:text-white text-(--c27) font-bold text-2xl cursor-default'>{product?.name}</p>
+                                        <p className='dark:text-white text-(--c27) font-bold text-2xl cursor-default'>{product?.isCustom ? `${product?.name + " (Customizado)"}` : product?.name}</p>
                                         <Trash2 className='dark:text-white text-(--c27) cursor-pointer hover:text-red-500 transition duration-300' size={17} onClick={() => onRemove && onRemove(cartinfo.id, cartinfo.size)}/>
                                     </div>
-                                    <p className='text-(--c11) text-sm cursor-default'>{product?.desc}</p>
+                                    
+                                    {/* Detalhes do doce customizado */}
+                                    {product?.isCustom ? (
+                                        <div className='flex flex-col gap-1'>
+                                            {product.flavors?.length > 0 && (
+                                                <p className='text-(--c11) text-sm cursor-default'>
+                                                    <span className="font-semibold">Sabores:</span> {product.flavors.join(', ')}
+                                                </p>
+                                            )}
+                                            {product.colors?.length > 0 && (
+                                                <p className='text-(--c11) text-sm cursor-default'>
+                                                    <span className="font-semibold">Cores:</span> {product.colors.map(c => c.name).join(', ')}
+                                                </p>
+                                            )}
+                                            {product.details?.length > 0 && (
+                                                <p className='text-(--c11) text-sm cursor-default'>
+                                                    <span className="font-semibold">Detalhes:</span> {product.details.join(', ')}
+                                                </p>
+                                            )}
+                                            {product.desc && (
+                                                <p className='text-(--c11) text-sm cursor-default mt-1'>{product.desc}</p>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <p className='text-(--c11) text-sm cursor-default'>{product?.desc}</p>
+                                    )}
 
                                     <div className='items-center flex'>
                                         <p className='cursor-default mt-[1%] text-[0.7rem] border-2 border-(--c8) p-[1px] text-(--c8) rounded-md'>

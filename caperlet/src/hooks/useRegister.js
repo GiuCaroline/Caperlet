@@ -10,7 +10,7 @@ export function useRegister() {
     setErro(null);
     try {
       const data = await apiRequest("/auth/register", "POST", { name, email, phone, password });
-      if (!data.sucess) throw new Error(data.message);
+      if (!data.success) throw new Error(data.message);
       return data.user;
     } catch (err) {
       setErro(err.message);
