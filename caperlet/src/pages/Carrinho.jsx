@@ -42,7 +42,7 @@ function Carrinho(){
     
         useEffect(() => {
           const carregaDoces = async () => {
-            const data = await fetchCandies().then(()=>{console.log(candies)});
+            const data = await fetchCandies();
             if(data && data.length > 0){
               const candies = data.map((candy) => {
                 const { id, name, desc, price, image, packageSize, packagePrice } = candy;

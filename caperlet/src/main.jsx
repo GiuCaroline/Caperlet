@@ -26,7 +26,6 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 function App() {
-  console.log(localStorage.getItem("darkMode"))
   const [darkMode, setDarkMode] = useState(Boolean(localStorage.getItem('darkMode')) || false)
 
   function toggleDarkMode(){

@@ -50,10 +50,12 @@ function Nav({darkMode, isDark}) {
 
   return(
     <nav className={`dark:bg-(--c3) bg-(--c24) py-6 px-[4rem] flex items-center justify-between montserrat-f ${location.pathname === "/carrinho" || location.pathname === "/pagamento" ? shadowClass : ''}`}>
-        <h1 className="text-4xl font-extrabold cursor-default">
-          <span className="text-(--c4)">CA</span>
-          <span className="dark:text-white text-(--c27)">PERLET</span>
-        </h1>
+        <a href="/"> 
+          <h1 className="text-4xl font-extrabold cursor-default cursor-pointer">
+            <span className="text-(--c4)">CA</span>
+            <span className="dark:text-white text-(--c27)">PERLET</span>
+          </h1>
+        </a>
         <div className="dark:text-white text-(--c27) flex items-center text-[1.2rem] list-none gap-x-[5rem]">
           <li className="cursor-pointer"><a href="/cadastroProduto">Cadastro Produtos</a></li>
           <li className="cursor-pointer"><a href="/loja">Loja</a></li>

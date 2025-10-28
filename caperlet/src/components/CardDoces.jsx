@@ -27,11 +27,11 @@ function CardDoces({candy, loading, erro, cartAdd}) {
 
     return(
         <div className="dark:bg-(--c9) bg-(--c28) rounded-xl shadow-lg overflow-hidden w-[21rem] dark:border-(--c10) border-(--c24) border-1
-                transition hover:scale-[1.02] hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
+                transition hover:scale-[1.02]  hover:shadow-[#C09AF8]/20 hover:border-(--c8) duration-300">
                   <img
                     src={image}
                     alt={name}
-                    className="mt-3 object-cover w-full h-48 "
+                    className="mt-3 object-cover w-full h-48"
                   />
 
                   <div className="p-5">

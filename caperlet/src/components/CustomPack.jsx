@@ -229,7 +229,7 @@ function CustomPack({moveStep}) {
                       </p>
                     </div>
 
-                    <button className='w-[100%] h-[2.3rem] text-white font-bold cursor-pointer mt-7
+                    <button onClick={()=>{location.pathname="/carrinho"}} className='w-[100%] h-[2.3rem] text-white font-bold cursor-pointer mt-7
                       bg-(--c12) border-1 border-(--c12) rounded-md transition duration-200 hover:scale-102 hover:bg-(--c25)'>Adicionar ao carrinho</button>
                   </div>
               </div>
