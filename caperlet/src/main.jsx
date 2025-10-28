@@ -15,6 +15,7 @@ import Customizado4 from "./pages/Customizado4.jsx"
 import Carrinho from "./pages/Carrinho.jsx"
 import Pagamento from "./pages/Pagamento.jsx"
 import CadasProd from "./pages/CadasProd.jsx"
+import { useEffect } from "react";
 
 const hideNavPages = ["/login", "/cadastro"];
 const showNav = !hideNavPages.includes(location.pathname);
@@ -28,6 +29,39 @@ createRoot(document.getElementById('root')).render(
   </StrictMode>,
 )
 function App() {
+   useEffect(() => {
+    // AUMENTAR / DIMINUIR FONTE
+    const body = document.body;
+    let fontSize = 100;
+    const changeSize = (delta) => {
+      fontSize += delta;
+      body.style.fontSize = fontSize + "%";
+    };
+
+    const btnUp = document.getElementById("aumentar-texto");
+    const btnDown = document.getElementById("diminuir-texto");
+    if(btnUp) btnUp.addEventListener("click", () => changeSize(10));
+    if(btnDown) btnDown.addEventListener("click", () => changeSize(-10));
+
+
+    // ALTO CONTRASTE
+    const contraste = document.getElementById("alternar-contraste");
+    if(contraste) contraste.addEventListener("click", () => {
+      body.classList.toggle("alto-contraste");
+    });
+
+    // PRETO E BRANCO
+    const pb = document.getElementById("preto-e-branco");
+    if(pb) pb.addEventListener("click", () => {
+      body.classList.toggle("preto-e-branco");
+    });
+
+    // VLibras
+    if (window.VLibras) {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    }
+  }, []);
+
   return (
     <Router>
       {showNav && <Nav />}
