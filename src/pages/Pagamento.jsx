@@ -282,7 +282,7 @@ function Pagamento() {
                                         <div className="relative w-full">
                                             <CalendarDays size={23}className="absolute left-3 top-1/2 -translate-y-1/2 text-(--c5)" />
                                             <input id="dataEntrega" name='dataEntrega' type='date' min={dataMinima()} value={dataEntrega} onChange={(e) => {setDataEntrega(e.target.value)}} className='w-full border-1 dark:border-(--c10) border-(--c25) dark:text-white
-                                            text-(--c27) invert rounded-lg pl-10 pr-2 py-1'></input>
+                                            text-(--c27) rounded-lg pl-10 pr-2 py-1'></input>
                                         </div>
                                         <div className="bg-(--c24)/20 text-white border border-(--c25) rounded-lg p-4 mt-3">
                                             <div className="flex items-start gap-3">
