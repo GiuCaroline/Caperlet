@@ -4,35 +4,35 @@ import { Palette } from "lucide-react"
 import { Gift } from "lucide-react"
 import { Sparkle } from "phosphor-react"
 
-function CaminhoCustom() {
+function CaminhoCustom({currentStep, moveStep}) {
     return(
         <span className="absolute bottom-8 flex flex-row items-center gap-x-5 w-auto bg-(--c3) py-1 px-10 border-1 border-(--c12) rounded-full">
-            <button onClick={()=>{window.location="/customizado"}}  className="flex items-center p-2 bg-(--c12)
-            text-white rounded-full cursor-pointer">
-            <Sparkle className="text-white" size={25} weight="fill"/>
+            <button onClick={()=>{moveStep(0)}}  className={`flex items-center p-2 bg-(--c12)
+            text-white rounded-full cursor-pointer`}>
+                <Sparkle className="text-white" size={25} weight="fill"/>
             </button>
             <p className="text-white font-medium cursor-pointer">Escolha da base</p>
             <div className="flex-1 h-[2px] w-25 bg-(--c12) rounded-full"></div>
 
-            <button onClick={()=>{window.location="/customizadoSabor"}}  className="flex items-center p-2 bg-(--c14)
-            text-white rounded-full cursor-pointer">
-            <Heart className="text-(--c15)" size={25}/>
+            <button onClick={()=>{moveStep(1)}}  className={`flex items-center p-2 ${currentStep >= 1 ? 'bg-(--c12)' : 'bg-(--c14)'}
+            rounded-full cursor-pointer`}>
+            <Heart className={`${currentStep >= 1 ? 'text-white' : 'text-(--c15)'}`} size={25}/>
             </button>
-            <p className="text-(--c15) font-medium cursor-pointer">Sabores</p>
+            <p className={`${currentStep >= 1 ? 'text-white' : 'text-(--c15)'} font-medium cursor-pointer`}>Sabores</p>
             <div className="flex-1 h-[2px] bg-(--c12) rounded-full"></div>
 
-            <button onClick={()=>{window.location="/customizadoColoracao"}} className="flex items-center p-2 bg-(--c14)
-            text-white rounded-full cursor-pointer">
-            <Palette className="text-(--c15)" size={25}/>
+            <button onClick={()=>{moveStep(2)}} className={`flex items-center p-2 ${currentStep >= 2 ? 'bg-(--c12) text-white' : 'bg-(--c14) text-(--c15)'}
+            rounded-full cursor-pointer`}>
+            <Palette className={`${currentStep >= 2 ? 'text-white' : 'text-(--c15)'}`} size={25}/>
             </button>
-            <p className="text-(--c15) font-medium cursor-pointer">Coloração</p>
+            <p className={`${currentStep >= 2 ? 'text-white' : 'text-(--c15)'} font-medium cursor-pointer`}>Coloração</p>
             <div className="flex-1 h-[2px] bg-(--c12) rounded-full"></div>
 
-            <button onClick={()=>{window.location="/customizadoPacote"}}  className="flex items-center p-2 bg-(--c14)
-            text-white rounded-full cursor-pointer">
-            <Gift className="text-(--c15)" size={25}/>
+            <button onClick={()=>{moveStep(3)}}  className={`flex items-center p-2 ${currentStep >= 3 ? 'bg-(--c12) text-white' : 'bg-(--c14) text-(--c15)'}
+            rounded-full cursor-pointer`}>
+            <Gift className={`${currentStep >= 3 ? 'text-white' : 'text-(--c15)'}`} size={25}/>
             </button>
-            <p className="text-(--c15) font-medium cursor-pointer">Seleção de pacote</p>
+            <p className={`${currentStep >= 3 ? 'text-white' : 'text-(--c15)'} font-medium cursor-pointer`}>Seleção de pacote</p>
 
         </span>
     )

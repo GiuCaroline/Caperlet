@@ -1,6 +1,12 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+*{
+  transition: 200ms;
+}
+
 :root{
   /* DARK */
   --c1:#F3E6D7;
@@ -32,13 +38,14 @@
   /* LIGHT */
   --c24: #fffaf5;
   /*--c24: #FDEED9;*/
-  /*--c25:#583C26;*/
   --c25:#8c7461;
   --c26:#e100ff;
   --c27:#190E03;
   --c28:#f9f0fa;
   --c29:#ad9786;
   --c30:#3B2314;
+  --c32:#331E10;
+  --c33:#583C26;
 }
 
 .montserrat-f {

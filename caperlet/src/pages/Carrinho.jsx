@@ -33,16 +33,53 @@ function Carrinho(){
         }
     }
 
+    // build custom product helper (usado para exibir o item customizado)
+    function buildCustomProduct(raw) {
+        if (!raw || !raw.base) return null;
+        const packageSize = raw.package?.packageSize || 8;
+        const customTax = raw.base ? ((raw.base.price * 0.25) * packageSize) : 0;
+        const packPrice = raw.base ? Number((raw.base.price * packageSize) + (customTax) + ((raw.package?.packagePrice) || 0)) : 0;
+        
+        // monta descrição completa incluindo sabores e detalhes
+        const sabores = raw.flavors?.length ? `Sabores: ${raw.flavors.join(', ')}` : '';
+        const cores = raw.color?.length ? `Cores: ${raw.color.map(c => c.name).join(', ')}` : '';
+        const detalhes = raw.details?.length ? `Detalhes: ${raw.details.join(', ')}` : '';
+        const fullDesc = [
+            raw.description,
+            sabores,
+            cores,
+            detalhes
+        ].filter(Boolean).join('\n');
+        
+        return {
+            id: 'custom',
+            name: raw.base?.name || 'Doce customizado',
+            desc: fullDesc || 'Doce personalizado',
+            price: raw.base?.price || 0,
+            image: raw.base?.image || '/images/Macaron1.png',
+            packageSize,
+            packagePrice: packPrice,
+            // campos extra para o card custom
+            isCustom: true,
+            flavors: raw.flavors || [],
+            colors: raw.color || [],
+            details: raw.details || []
+        }
+    }
+
+    const [candyProducts, setCandyProducts] = useState([]);
+
+    // Calcula o subtotal usando os produtos atualizados
     const subtotal = cart.reduce((total, item) => {
-        const product = candies ? candies.find(candy => candy.id === item.id) : undefined;
+        const product = candyProducts.find(candy => candy.id === item.id);
         const unitPrice = item.size === 'unit' ? product?.price : product?.packagePrice;
         const price = Number(unitPrice) || 0;
         return total + price * item.quantity;
     }, 0)
     
-        useEffect(() => {
+    useEffect(() => {
           const carregaDoces = async () => {
-            const data = await fetchCandies().then(()=>{console.log(candies)});
+            const data = await fetchCandies();
             if(data && data.length > 0){
               const candies = data.map((candy) => {
                 const { id, name, desc, price, image, packageSize, packagePrice } = candy;
@@ -55,17 +92,58 @@ function Carrinho(){
         }, []);
 
     useEffect(() => {
-        let savedCart = localStorage.getItem("cart") || "[]";
-        setCart(JSON.parse(savedCart));
+        const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
+        const rawCustom = JSON.parse(localStorage.getItem('customCart') || 'null');
+        let merged = [...savedCart];
+        if (rawCustom && rawCustom.base) {
+            const exists = merged.some(i => i.id === 'custom');
+            if (!exists) {
+                merged.push({ id: 'custom', size: 'package', quantity: rawCustom.quantity || 1, isCustom: true });
+            }
+        }
+        setCart(merged);
     }, []);
 
     // helpers para persistir e atualizar state
+    // Atualiza os produtos quando candies ou customCart mudam
+    useEffect(() => {
+        const raw = JSON.parse(localStorage.getItem('customCart') || 'null');
+        const customProduct = buildCustomProduct(raw);
+        const products = candies ? [...candies] : [];
+        if (customProduct) products.push(customProduct);
+        setCandyProducts(products);
+    }, [candies]);
+
     function persistCart(newCart) {
         localStorage.setItem("cart", JSON.stringify(newCart));
-        setCart(newCart);
+        
+        // Mantém o item customizado se existir
+        const customItem = cart.find(item => item.id === 'custom');
+        const mergedCart = [...newCart];
+        if (customItem && !newCart.some(item => item.id === 'custom')) {
+            mergedCart.push(customItem);
+        }
+        
+        setCart(mergedCart);
     }
 
+
+
     function handleIncrease(id, size) {
+        if (id === 'custom') {
+            // Aumenta quantidade do customCart
+            const raw = JSON.parse(localStorage.getItem('customCart') || 'null');
+            if (!raw) return;
+            raw.quantity = (raw.quantity || 1) + 1;
+            localStorage.setItem('customCart', JSON.stringify(raw));
+            
+            // Atualiza o cart também
+            setCart(prev => prev.map(item => 
+                item.id === 'custom' ? { ...item, quantity: raw.quantity } : item
+            ));
+            return;
+        }
+
         const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
         const idx = savedCart.findIndex(item => item.id === id && item.size === size);
         if (idx === -1) return;
@@ -74,6 +152,20 @@ function Carrinho(){
     }
 
     function handleDecrease(id, size) {
+        if (id === 'custom') {
+            // Diminui quantidade do customCart
+            const raw = JSON.parse(localStorage.getItem('customCart') || 'null');
+            if (!raw) return;
+            raw.quantity = Math.max(1, (raw.quantity || 1) - 1);
+            localStorage.setItem('customCart', JSON.stringify(raw));
+            
+            // Atualiza o cart também
+            setCart(prev => prev.map(item => 
+                item.id === 'custom' ? { ...item, quantity: raw.quantity } : item
+            ));
+            return;
+        }
+
         const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
         const idx = savedCart.findIndex(item => item.id === id && item.size === size);
         if (idx === -1) return;
@@ -82,6 +174,18 @@ function Carrinho(){
     }
 
     function handleRemove(id, size) {
+        if (id === 'custom') {
+            // Remove customCart do localStorage
+            localStorage.removeItem('customCart');
+            
+            // Remove do cart também
+            setCart(prev => prev.filter(item => item.id !== 'custom'));
+            
+            // Atualiza a lista de produtos
+            setCandyProducts(prev => prev.filter(p => p.id !== 'custom'));
+            return;
+        }
+
         const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
         const newCart = savedCart.filter(item => !(item.id === id && item.size === size));
         persistCart(newCart);
@@ -105,7 +209,7 @@ function Carrinho(){
                     <div className='w-[92%] gap-10 flex flex-col'>
                         {cart.length > 0 ? (
                             cart.map((cartInfo, index) => (
-                                <CardCart key={index} id={cartInfo.id} cartinfo={cartInfo} candy={candies} onIncrease={handleIncrease} onDecrease={handleDecrease} onRemove={handleRemove} />
+                                <CardCart key={index} id={cartInfo.id} cartinfo={cartInfo} candy={candyProducts} onIncrease={handleIncrease} onDecrease={handleDecrease} onRemove={handleRemove} />
                             ))
                         ) : (
                             <p className='dark:text-white text-(--c27)'>Seu carrinho está vazio.</p>

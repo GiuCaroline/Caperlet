@@ -10,13 +10,13 @@ export async function loginUser(req, res) {
     );
 
     if (result.rows.length > 0) {
-      res.json({ sucess: true, user: result.rows[0] });
+      res.json({ success: true, user: result.rows[0] });
     } else {
-      res.status(401).json({ sucess: false, message: "Credenciais inválidas" });
+      res.status(401).json({ success: false, message: "Credenciais inválidas" });
     }
   } catch (error) {
     console.error("Erro ao logar:", error);
-    res.status(500).json({ sucess: false, message: "Erro interno do servidor" });
+    res.status(500).json({ success: false, message: "Erro interno do servidor" });
   }
 }
 
@@ -30,7 +30,7 @@ export async function registerUser(req, res) {
     );
 
     if (existingUser.rows.length > 0) {
-      return res.status(400).json({ sucess: false, message: "Email já cadastrado" });
+      return res.status(400).json({ success: false, message: "Email já cadastrado" });
     }
 
     const result = await pool.query(
@@ -38,11 +38,11 @@ export async function registerUser(req, res) {
       [name, email, phone, password]
     );
 
-    res.json({ sucess: true, user: result.rows[0] });
+    res.json({ success: true, user: result.rows[0] });
     localStorage.setItem('userEmail', email);
     localStorage.setItem('userPassword', password);
   } catch (error) {
     console.error("Erro ao registrar:", error);
-    res.status(500).json({ sucess: false, message: "Erro interno do servidor" });
+    res.status(500).json({ success: false, message: "Erro interno do servidor" });
   }
 }
