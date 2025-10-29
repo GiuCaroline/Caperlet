@@ -174,6 +174,7 @@ function Pagamento() {
         const c23 = cs.getPropertyValue('--c23').trim() || '#15D33E';
         const c22 = cs.getPropertyValue('--c22').trim() || 'rgba(21, 211, 62, 0.5)';
         root.style.setProperty('--c4', c23);
+        root.style.dropShadow = '0 0 10px ' + c23;
         root.style.setProperty('--c8', c22);
 
         alert('Pedido validado. Paleta de cores atualizada.');
@@ -187,7 +188,7 @@ function Pagamento() {
                     <p className='text-(--c20)'>Voltar pro carrinho</p>
                 </div>
                 <div className='mb-8 mt-3 flex color-(--c4'>
-                    <Handbag size={55} className="bg-(--c21) rounded-full p-2 text-(--c4)"  />
+                    <Handbag size={55} className="bg-(--c8) rounded-full p-2 text-(--c4)"  />
                     <div className='flex flex-col ml-3'>
                         <h2 className='dark:text-white text-(--c27) font-bold text-2xl'>Finalizando pedido</h2>
                         <p className='dark:text-white text-(--c27) font-light'>Confira os dados de envio e pagamento</p>

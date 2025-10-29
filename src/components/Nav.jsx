@@ -14,9 +14,6 @@ function Nav({darkMode, isDark}) {
   if(location.pathname === "/carrinho" || location.pathname === "/pagamento"){
     const purpleShadowRoutes = ["/carrinho", "/pagamento"];
     
-    if (purpleShadowRoutes.includes(location.pathname)) {
-      shadowClass = "drop-shadow-[0_20px_20px_rgba(215,92,240,1.0)]";
-    }
   
     useEffect(() => {
       const handleScroll = () => {
