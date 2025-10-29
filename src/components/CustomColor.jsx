@@ -91,7 +91,7 @@ function CustomColor({moveStep}) {
     return(
         <section className="dark:bg-(--c3) bg-(--c24) flex w-full">
               <div className='w-full flex flex-col items-center'>
-                <div className="p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-[45rem]">
+                <div className="p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-full">
                   <h1 className="text-4xl font-bold mb-6 dark:text-white text-(--c27) text-left cursor-default">Escolha até 2 cores</h1>
 
                   <div className="grid grid-cols-2 gap-6">
@@ -147,38 +147,38 @@ function CustomColor({moveStep}) {
                     {customCart.color?.length || 0} de 2 cores selecionadas
                   </p>
                 </div>
-                <div className='p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-[45rem] mt-5'>
+                <div className='p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-full mt-5'>
                   <h1 className="text-4xl font-bold mb-6 dark:text-white text-(--c27) text-left cursor-default">Selecione até 2 detalhes</h1>
 
                   <div className='flex flex-wrap gap-[1.5rem] justify-center'>
-                    <button onClick={()=>{selectDetail("Folha de ouro")}} className={`${customCart.details?.includes("Folha de ouro") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Folha de ouro") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                    <button onClick={()=>{selectDetail("Folha de ouro")}} className={`${customCart.details?.includes("Folha de ouro") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Folha de ouro") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Folha de ouro</button>
 
-                        <button onClick={()=>{selectDetail("Frutas desidratadas")}} className={`${customCart.details?.includes("Frutas desidratadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Frutas desidratadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Frutas desidratadas")}} className={`${customCart.details?.includes("Frutas desidratadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Frutas desidratadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Frutas desidratadas</button>
 
-                        <button onClick={()=>{selectDetail("Pétalas de rosas")}} className={`${customCart.details?.includes("Pétalas de rosas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pétalas de rosas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Pétalas de rosas")}} className={`${customCart.details?.includes("Pétalas de rosas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pétalas de rosas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Pétalas de rosas (comestíveis)</button>
 
-                        <button onClick={()=>{selectDetail("Pó de cacau")}} className={`${customCart.details?.includes("Pó de cacau") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pó de cacau") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Pó de cacau")}} className={`${customCart.details?.includes("Pó de cacau") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pó de cacau") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Pó de cacau</button>
 
-                        <button onClick={()=>{selectDetail("Flores cristalizadas")}} className={`${customCart.details?.includes("Flores cristalizadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Flores cristalizadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Flores cristalizadas")}} className={`${customCart.details?.includes("Flores cristalizadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Flores cristalizadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Flores cristalizadas</button>
 
-                        <button onClick={()=>{selectDetail("Raspas de chocolate belga")}} className={`${customCart.details?.includes("Raspas de chocolate belga") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Raspas de chocolate belga") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Raspas de chocolate belga")}} className={`${customCart.details?.includes("Raspas de chocolate belga") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Raspas de chocolate belga") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Raspas de chocolate belga</button>
 
-                        <button onClick={()=>{selectDetail("Flor de sal")}} className={`${customCart.details?.includes("Flor de sal") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Flor de sal") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Flor de sal")}} className={`${customCart.details?.includes("Flor de sal") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Flor de sal") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Flor de sal</button>
 
-                        <button onClick={()=>{selectDetail("Folhas de hortelã glaceadas")}} className={`${customCart.details?.includes("Folhas de hortelã glaceadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Folhas de hortelã glaceadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Folhas de hortelã glaceadas")}} className={`${customCart.details?.includes("Folhas de hortelã glaceadas") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Folhas de hortelã glaceadas") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Folhas de hortelã glaceadas</button>
 
-                        <button onClick={()=>{selectDetail("Lâminas de coco desidratado")}} className={`${customCart.details?.includes("Lâminas de coco desidratado") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Lâminas de coco desidratado") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Lâminas de coco desidratado")}} className={`${customCart.details?.includes("Lâminas de coco desidratado") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Lâminas de coco desidratado") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Lâminas de coco desidratado</button>
 
-                        <button onClick={()=>{selectDetail("Pó perolado artesanal")}} className={`${customCart.details?.includes("Pó perolado artesanal") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pó perolado artesanal") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[18rem]
+                        <button onClick={()=>{selectDetail("Pó perolado artesanal")}} className={`${customCart.details?.includes("Pó perolado artesanal") ? 'bg-(--c12) text-white' : 'dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)]'} ${!customCart.details?.includes("Pó perolado artesanal") && customCart.details?.length >= 2 ? 'opacity-50 cursor-not-allowed' : ''} cursor-pointer dark:text-white text-(--c27) w-[40%]
                      rounded-md border-1 dark:border-(--c12) border-(--c25) pl-[1rem] text-left font-medium transition duration-300`}>Pó perolado artesanal</button>
 
                     <div className="grid grid-cols-2 gap-[18rem]">
@@ -188,11 +188,11 @@ function CustomColor({moveStep}) {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
-                  <button className='w-[7rem] h-[2.3rem] dark:text-(--c13) text-(--c11) font-bold cursor-pointer 
+                <div className="grid grid-cols-2 gap-[30rem] mt-5 w-full">
+                  <button className='w-full h-[2.3rem] dark:text-(--c13) text-(--c11) font-bold cursor-pointer 
                   bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{moveStep(1)}}>Regredir</button>
                   
-                  <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-pointer 
+                  <button className='w-full h-[2.3rem] text-white font-bold cursor-pointer 
                   bg-(--c12) border-1 border-(--c12) rounded-md'  onClick={()=>{moveStep(3)}}>Avançar</button>
                 </div>
               </div>

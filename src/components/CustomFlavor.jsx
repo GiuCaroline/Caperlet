@@ -94,7 +94,7 @@ function CustomFlavor({moveStep}) {
                     </div>
                   </div>
                 </div>
-                  <div className="grid grid-cols-2 gap-[30rem] mt-5 w-[45rem]">
+                  <div className="grid grid-cols-2 gap-[30rem] mt-5 w-full">
                     <button className='w-full h-[2.3rem] dark:text-(--c13) text-(--c11) font-bold cursor-pointer 
                     bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{moveStep(0)}}>Regredir</button>
                     
