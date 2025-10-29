@@ -36,9 +36,9 @@ function Carrinho(){
     // build custom product helper (usado para exibir o item customizado)
     function buildCustomProduct(raw) {
         if (!raw || !raw.base) return null;
-        const packageSize = raw.package?.packageSize || 8;
-        const customTax = raw.base ? ((raw.base.price * 0.25) * packageSize) : 0;
-        const packPrice = raw.base ? Number((raw.base.price * packageSize) + (customTax) + ((raw.package?.packagePrice) || 0)) : 0;
+        const package_size = raw.package?.package_size || 8;
+        const customTax = raw.base ? ((raw.base.price * 0.25) * package_size) : 0;
+        const packPrice = raw.base ? Number((raw.base.price * package_size) + (customTax) + ((raw.package?.package_price) || 0)) : 0;
         
         // monta descrição completa incluindo sabores e detalhes
         const sabores = raw.flavors?.length ? `Sabores: ${raw.flavors.join(', ')}` : '';
@@ -54,11 +54,11 @@ function Carrinho(){
         return {
             id: 'custom',
             name: raw.base?.name || 'Doce customizado',
-            desc: fullDesc || 'Doce personalizado',
+            descript: fullDesc || 'Doce personalizado',
             price: raw.base?.price || 0,
             image: raw.base?.image || '/images/Macaron1.png',
-            packageSize,
-            packagePrice: packPrice,
+            package_size,
+            package_price: packPrice,
             // campos extra para o card custom
             isCustom: true,
             flavors: raw.flavors || [],
@@ -72,7 +72,7 @@ function Carrinho(){
     // Calcula o subtotal usando os produtos atualizados
     const subtotal = cart.reduce((total, item) => {
         const product = candyProducts.find(candy => candy.id === item.id);
-        const unitPrice = item.size === 'unit' ? product?.price : product?.packagePrice;
+        const unitPrice = item.size === 'unit' ? product?.price : product?.package_price;
         const price = Number(unitPrice) || 0;
         return total + price * item.quantity;
     }, 0)
@@ -82,8 +82,8 @@ function Carrinho(){
             const data = await fetchCandies();
             if(data && data.length > 0){
               const candies = data.map((candy) => {
-                const { id, name, desc, price, image, packageSize, packagePrice } = candy;
-                return { id, name, desc, price, image, packageSize, packagePrice };
+                const { id, name, descript, price, image, package_size, package_price } = candy;
+                return { id, name, descript, price, image, package_size, package_price };
               });
               setCandies(candies);
             }

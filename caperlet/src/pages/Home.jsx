@@ -110,7 +110,7 @@ function Home() {
 
                       <h2 className="text-7xl text-(--c4) cursor-default font-extrabold">{candy.name.toUpperCase()}</h2>
                       <p className="text-(--c5) cursor-default max-w-2xl text-xl">
-                        {candy.desc}
+                        {candy.descript}
                       </p>
 
                       <div className="flex flex-row gap-x-[3rem] mt-[1rem]">

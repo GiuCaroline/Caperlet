@@ -14,9 +14,9 @@ function LojaPadrao() {
         const data = await fetchCandies();
         if(data && data.length > 0){
           const candies = data.map((candy) => {
-            const { id, name, desc, price, image, packageSize, packagePrice } = candy;
-            return { id, name, desc, price, image, packageSize, packagePrice };
-          }).filter(candy => candy.name.toLowerCase().includes(searchText.toLowerCase()) || candy.desc.toLowerCase().includes(searchText.toLowerCase()));
+            const { id, name, descript, price, image, package_size, package_price } = candy;
+            return { id, name, descript, price, image, package_size, package_price };
+          }).filter(candy => candy.name.toLowerCase().includes(searchText.toLowerCase()) || candy.descript.toLowerCase().includes(searchText.toLowerCase()));
           setCandies(candies);
         }
       };

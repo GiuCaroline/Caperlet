@@ -4,8 +4,8 @@ import { Trash2 } from "lucide-react"
 
 function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
     const product = candy ? candy.find(item => item.id === cartinfo.id) : undefined;
-    const sizeText = cartinfo.size === 'unit' ? 'Unidade' : `Pacote (${product?.packageSize || '-'})`;
-    const unitPrice = cartinfo.size === 'unit' ? product?.price : product?.packagePrice;
+    const sizeText = cartinfo.size === 'unit' ? 'Unidade' : `Pacote (${product?.package_size || '-'})`;
+    const unitPrice = cartinfo.size === 'unit' ? product?.price : product?.package_price;
     const cartPrice = Number(unitPrice) || 0;
     return(
                                 <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-[100%]">
@@ -41,12 +41,12 @@ function CardCart({cartinfo, candy, onIncrease, onDecrease, onRemove}) {
                                                     <span className="font-semibold">Detalhes:</span> {product.details.join(', ')}
                                                 </p>
                                             )}
-                                            {product.desc && (
-                                                <p className='text-(--c11) text-sm cursor-default mt-1'>{product.desc}</p>
+                                            {product.descript && (
+                                                <p className='text-(--c11) text-sm cursor-default mt-1'>{product.descript}</p>
                                             )}
                                         </div>
                                     ) : (
-                                        <p className='text-(--c11) text-sm cursor-default'>{product?.desc}</p>
+                                        <p className='text-(--c11) text-sm cursor-default'>{product?.descript}</p>
                                     )}
 
                                     <div className='items-center flex'>

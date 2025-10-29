@@ -44,7 +44,7 @@ function CadasProd(){
             const candyData = {
                 name,
                 type,
-                descript: desc,
+                desc,
                 price: Number(price),
                 image: imageUrl,
                 package_size: Number(package_size),

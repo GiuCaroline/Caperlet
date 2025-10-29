@@ -4,14 +4,14 @@ import { Plus, Minus, ShoppingBag } from "lucide-react"
 import { useState, useEffect } from 'react'
 
 function CardDoces({candy, loading, erro, cartAdd}) {
-  const { id, name, desc, price, image, packageSize, packagePrice } = candy;
+  const { id, name, descript, price, image, package_size, package_price } = candy;
   const [quantity, setQuantity] = useState(1);
   const [actualPrice, setActualPrice] = useState(price);
   const [selectedSize, setSelectedSize] = useState("unit")
   
     useEffect(() => {
-        setActualPrice((selectedSize === "unit" ? price : packagePrice) * quantity);
-    }, [quantity, price, packagePrice, selectedSize]);
+        setActualPrice((selectedSize === "unit" ? price : package_price) * quantity);
+    }, [quantity, price, package_price, selectedSize]);
 
     function increaseQuantity() {
         setQuantity((q) => q + 1);
@@ -44,7 +44,7 @@ function CardDoces({candy, loading, erro, cartAdd}) {
                     <p className="text-sm text-(--c11) mb-3 leading-snug font-light cursor-default overflow-hidden text-ellipsis h-10">
                     {loading && "Carregando..."}
                       {erro && `Erro: ${erro}`}
-                      {!loading && !erro && desc}
+                      {!loading && !erro && descript}
                     </p>
 
                     <div className="flex gap-2 mb-4">
@@ -53,11 +53,11 @@ function CardDoces({candy, loading, erro, cartAdd}) {
                         <Sparkle size={14} />
                         Unidade
                       </label>
-                      <input type="radio" id={`btnSize-${id}-2`} name={`btnSize-${id}`} value={packageSize} checked={selectedSize === "package"} onChange={() => setSelectedSize("package")} className='hidden' />
+                      <input type="radio" id={`btnSize-${id}-2`} name={`btnSize-${id}`} value={package_size} checked={selectedSize === "package"} onChange={() => setSelectedSize("package")} className='hidden' />
                       <label htmlFor={`btnSize-${id}-2`} className="cursor-pointer transition duration-[300ms] flex items-center gap-1 px-4 py-1 bg-[rgba(152,92,240,0.1)] text-(--c8) 
                        rounded-lg text-xs font-semibold hover:scale-[1.1]">
                         <Sparkle size={14} />
-                        Pacote ({packageSize})
+                        Pacote ({package_size})
                       </label>
                     </div>
 

@@ -8,12 +8,12 @@ function CustomColor({moveStep}) {
     const [customCart, setCustomCart] = useState(localStorage.getItem('customCart') ? 
     JSON.parse(localStorage.getItem('customCart')) : {
         quantity: quantity,
-        package: { packageSize: 8, packagePrice: 0 },
+        package: { package_size: 8, package_price: 0 },
         description: ''});
 
-    let customTax = customCart.base ? ((customCart.base.price * 0.25) * customCart.package.packageSize) : 0
+    let customTax = customCart.base ? ((customCart.base.price * 0.25) * customCart.package.package_size) : 0
     let packPrice = customCart.base ?
-                    Number((customCart.base.price * customCart.package.packageSize) + (customTax) + ((customCart.package.packagePrice))) : 0;
+                    Number((customCart.base.price * customCart.package.package_size) + (customTax) + ((customCart.package.package_price))) : 0;
      
     
     const colorOptions = [
@@ -221,8 +221,8 @@ function CustomColor({moveStep}) {
 
                     <div className={`${customCart.package ? 'block' : 'hidden'}`}>
                         <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5 cursor-default'>Tamanho do pacote</h2>
-                        <p className={`${customCart.package?.packageSize ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
-                        {customCart.package?.packageSize ? `${customCart.package.packageSize} unidades` : ''}
+                        <p className={`${customCart.package?.package_size ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
+                        {customCart.package?.package_size ? `${customCart.package.package_size} unidades` : ''}
                         </p>
                     </div>
 
@@ -284,7 +284,7 @@ function CustomColor({moveStep}) {
                         Upgrade de pacote
                       </p>
                       <p className="text-base text-[#777777] text-right cursor-default font-bold">
-                        {`${customCart.package ? `R$${customCart.package.packagePrice.toFixed(2)}` : ''}`}
+                        {`${customCart.package ? `R$${customCart.package.package_price.toFixed(2)}` : ''}`}
                       </p>
                     </div>
 

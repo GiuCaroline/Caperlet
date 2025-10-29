@@ -7,16 +7,16 @@ function CustomPack({moveStep}) {
     const [customCart, setCustomCart] = useState(localStorage.getItem('customCart') ? 
     JSON.parse(localStorage.getItem('customCart')) : {
         quantity: quantity,
-        package: { packageSize: 8, packagePrice: 0 },
+        package: { package_size: 8, package_price: 0 },
         description: ''});
 
-    let customTax = customCart.base ? ((customCart.base.price * 0.25) * customCart.package.packageSize) : 0
+    let customTax = customCart.base ? ((customCart.base.price * 0.25) * customCart.package.package_size) : 0
     let packPrice = customCart.base ?
-                    Number((customCart.base.price * customCart.package.packageSize) + (customTax) + ((customCart.package.packagePrice))) : 0;
+                    Number((customCart.base.price * customCart.package.package_size) + (customTax) + ((customCart.package.package_price))) : 0;
         
     
-    function selectPackageSize(size, sizePrice) {
-        const updatedCart = { ...customCart, package: { packageSize: size, packagePrice: sizePrice } };
+    function selectpackage_size(size, sizePrice) {
+        const updatedCart = { ...customCart, package: { package_size: size, package_price: sizePrice } };
         setCustomCart(updatedCart);
         localStorage.setItem('customCart', JSON.stringify(updatedCart));
     }
@@ -58,24 +58,24 @@ function CustomPack({moveStep}) {
 
                   <div className='flex gap-3 justify-center mt-[2%]'>
 
-                    <button onClick={()=>{selectPackageSize(8, 0)}} className={`${customCart.package?.packageSize === 8 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    <button onClick={()=>{selectpackage_size(8, 0)}} className={`${customCart.package?.package_size === 8 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
                     rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className={`${customCart.package?.packageSize === 8 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>8 unidades</span>
+                      <span className={`${customCart.package?.package_size === 8 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>8 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$00,00</span>
                     </button>
 
-                    <button onClick={()=>{selectPackageSize(12, 38)}} className={`${customCart.package?.packageSize === 12 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    <button onClick={()=>{selectpackage_size(12, 38)}} className={`${customCart.package?.package_size === 12 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
                     rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className={`${customCart.package?.packageSize === 12 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>12 unidades</span>
+                      <span className={`${customCart.package?.package_size === 12 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>12 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$38,00</span>
                     </button>
 
-                    <button onClick={()=>{selectPackageSize(16, 86)}} className={`${customCart.package?.packageSize === 16 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    <button onClick={()=>{selectpackage_size(16, 86)}} className={`${customCart.package?.package_size === 16 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
                     rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className={`${customCart.package?.packageSize === 16 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>16 unidades</span>
+                      <span className={`${customCart.package?.package_size === 16 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>16 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$86,00</span>
                     </button>
                   </div>
@@ -125,8 +125,8 @@ function CustomPack({moveStep}) {
 
                     <div className={`${customCart.package ? 'block' : 'hidden'}`}>
                         <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5 cursor-default'>Tamanho do pacote</h2>
-                        <p className={`${customCart.package?.packageSize ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
-                        {customCart.package?.packageSize ? `${customCart.package.packageSize} unidades` : ''}
+                        <p className={`${customCart.package?.package_size ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
+                        {customCart.package?.package_size ? `${customCart.package.package_size} unidades` : ''}
                         </p>
                     </div>
 
@@ -188,7 +188,7 @@ function CustomPack({moveStep}) {
                         Upgrade de pacote
                       </p>
                       <p className="text-base text-[#777777] text-right cursor-default font-bold">
-                        {`${customCart.package ? `R$${customCart.package.packagePrice.toFixed(2)}` : ''}`}
+                        {`${customCart.package ? `R$${customCart.package.package_price.toFixed(2)}` : ''}`}
                       </p>
                     </div>
 
