@@ -48,6 +48,8 @@
   --c33:#583C26;
 }
 
+html { font-size: 100%; }
+
 .montserrat-f {
   font-family: "Montserrat", sans-serif;
 }
@@ -60,3 +62,16 @@ input[type="radio"]:checked + label {
             background-color: var(--c4);
             color: white;
           }  
+
+.alto-contraste {
+    background-color: black; /*cor em alto contraste*/
+    color: white;
+} 
+
+.alto-contraste a {
+    color: yellow; /*Exemplo de cor de link em alto contraste*/ 
+}
+
+.preto-e-branco {
+    filter: grayscale(100%);
+}

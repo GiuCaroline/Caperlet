@@ -49,40 +49,40 @@ function CustomPack({moveStep}) {
     }
 
     return(
-        <section className="bg-(--c3) p-15 flex w-[100%]">
+        <section className="dark:bg-(--c3) bg-(--c24) flex w-full">
               <div className='w-full flex flex-col items-center'>
-                <div className="p-8 rounded-xl border border-(--c12) bg-transparent w-[45rem]">
-                  <h1 className="text-4xl font-bold mb-6 text-white text-left cursor-default">Customize o(s) pacote(s)</h1>
+                <div className="p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-[45rem]">
+                  <h1 className="text-4xl font-bold mb-6 dark:text-white text-(--c27) text-left cursor-default">Customize o(s) pacote(s)</h1>
 
-                  <h2 className='text-white font-bold text-base mt-5 cursor-default'>Tamanho do pacote</h2>
+                  <h2 className='dark:text-white text-(--c27) font-bold text-base mt-5 cursor-default'>Tamanho do pacote</h2>
 
                   <div className='flex gap-3 justify-center mt-[2%]'>
 
-                    <button onClick={()=>{selectPackageSize(8, 0)}} className={`${customCart.package?.packageSize === 8 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer text-white
-                    rounded-xl border border-(--c12) px-14 py-5 flex flex-col items-center justify-center font-bold
+                    <button onClick={()=>{selectPackageSize(8, 0)}} className={`${customCart.package?.packageSize === 8 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className="text-white text-base leading-none">8 unidades</span>
+                      <span className={`${customCart.package?.packageSize === 8 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>8 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$00,00</span>
                     </button>
 
-                    <button onClick={()=>{selectPackageSize(12, 38)}} className={`${customCart.package?.packageSize === 12 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer text-white
-                    rounded-xl border border-(--c12) px-14 py-5 flex flex-col items-center justify-center font-bold
+                    <button onClick={()=>{selectPackageSize(12, 38)}} className={`${customCart.package?.packageSize === 12 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className="text-white text-base leading-none">12 unidades</span>
+                      <span className={`${customCart.package?.packageSize === 12 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>12 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$38,00</span>
                     </button>
 
-                    <button onClick={()=>{selectPackageSize(16, 86)}} className={`${customCart.package?.packageSize === 16 ? 'bg-(--c12)' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer text-white
-                    rounded-xl border border-(--c12) px-14 py-5 flex flex-col items-center justify-center font-bold
+                    <button onClick={()=>{selectPackageSize(16, 86)}} className={`${customCart.package?.packageSize === 16 ? 'bg-(--c12) text-white' : 'bg-[rgba(53,41,22,0.2)]'} cursor-pointer dark:text-white text-(--c27)
+                    rounded-xl border dark:border-(--c12) border-(--c25) px-14 py-5 flex flex-col items-center justify-center font-bold
                     hover:scale-105 transition-all duration-200 whitespace-normal text-center transition duration-300`}>
-                      <span className="text-white text-base leading-none">16 unidades</span>
+                      <span className={`${customCart.package?.packageSize === 16 ? 'dark:text-white text-(--c27)' : 'text-white'}text-base leading-none`}>16 unidades</span>
                       <span className="text-(--c18) text-sm font-medium mt-1">+ R$86,00</span>
                     </button>
                   </div>
 
-                  <h2 className='text-white font-bold text-base mt-5 cursor-default'>Mensagem personalizada</h2>
+                  <h2 className='dark:text-white text-(--c27) font-bold text-base mt-5 cursor-default'>Mensagem personalizada</h2>
                   <textarea onChange={(e)=>{setDesc(e.target.value)}} value={customCart.description || ''} maxLength={160}
-                    className="mt-3 bg-[rgba(0,0,0,0.5)] text-white p-4 w-full h-[7rem] rounded-xl border border-(--c12) outline-none resize-none"
+                    className="mt-3 dark:bg-[rgba(0,0,0,0.5)] bg-[rgba(0,0,0,0.2)] dark:text-white text-(--c27) p-4 w-full h-[7rem] rounded-xl border dark:border-(--c12) border-(--c25) outline-none resize-none"
                     placeholder="Diga algo que precisamos saber sobre seu doce para torná-lo ainda mais especial"
                   ></textarea>
 
@@ -93,16 +93,16 @@ function CustomPack({moveStep}) {
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-[31rem] mt-5 w-[45rem]">
-                <button className='w-[7rem] h-[2.3rem] text-(--c13) font-bold cursor-pointer 
-                bg-[rgba(53,41,22,0.2)] border-1 border-(--c12) rounded-md' onClick={()=>{moveStep(2)}}>Regredir</button>
+                <button className='w-[7rem] h-[2.3rem] dark:text-(--c13) text-(--c11) font-bold cursor-pointer 
+                bg-[rgba(53,41,22,0.2)] border-1 dark:border-(--c12) border-(--c25) rounded-md' onClick={()=>{moveStep(2)}}>Regredir</button>
                 
-                <button className='w-[7rem] h-[2.3rem] text-white font-bold cursor-default opacity-[0.5]
-                bg-(--c12) border-1 border-(--c12) rounded-md cursor-not-allowed'>Avançar</button>
+                <button className='w-[7rem] h-[2.3rem] dark:text-white text-(--c27) font-bold cursor-default opacity-[0.5]
+                bg-(--c12) border-1 dark:border-(--c12) border-(--c25) rounded-md cursor-not-allowed'>Avançar</button>
                 </div>
               </div>
               <div className='w-[50%] ml-[5%]'>
-                  <div className="p-8 rounded-xl border border-(--c12) bg-transparent w-[45rem] flex flex-col">
-                    <h1 className="text-4xl font-bold mb-6 text-white text-left cursor-default">Sua criação açucarada</h1>
+                  <div className="p-8 rounded-xl border dark:border-(--c12) border-(--c25) bg-transparent w-[45rem] flex flex-col">
+                    <h1 className="text-4xl font-bold mb-6 dark:text-white text-(--c27) text-left cursor-default">Sua criação açucarada</h1>
 
                     {
                         customCart.base
@@ -118,55 +118,55 @@ function CustomPack({moveStep}) {
                         </div>
                     }
 
-                    <h2 className='text-white font-bold text-xl mt-5 cursor-default'>Tipo de base</h2>
+                    <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5 cursor-default'>Tipo de base</h2>
                     <p className={`${customCart.base?.name ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
                       {customCart.base?.name || ''}
                     </p>
 
                     <div className={`${customCart.package ? 'block' : 'hidden'}`}>
-                        <h2 className='text-white font-bold text-xl mt-5 cursor-default'>Tamanho do pacote</h2>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5 cursor-default'>Tamanho do pacote</h2>
                         <p className={`${customCart.package?.packageSize ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto'} text-base text-left cursor-default`}>
                         {customCart.package?.packageSize ? `${customCart.package.packageSize} unidades` : ''}
                         </p>
                     </div>
 
                     <div className={`${customCart.flavors ? 'block' : 'hidden'}`}>
-                        <h2 className='text-white font-bold text-xl mt-5'>Sabores</h2>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5'>Sabores</h2>
                         <p className="text-base text-(--c16) text-left cursor-default">
                         {customCart.flavors ? customCart.flavors.join(", ") : ''}
                         </p>
                     </div>
 
                     <div className={`${customCart.color ? 'block' : 'hidden'}`}>
-                        <h2 className='text-white font-bold text-xl mt-5'>Cor principal</h2>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5'>Cor principal</h2>
                         <div className='flex flex-row gap-2'>
                             {customCart.color?.map((color, index) => {
                                 return(
                                     <div key={index}
-                                    className={`top-2 right-2 w-6 h-6 border-2 border-(--c12) rounded-full bg-[${color.code}]`}
+                                    className={`top-2 right-2 w-6 h-6 border-2 dark:border-(--c12) border-(--c25) rounded-full bg-[${color.code}]`}
                                     ></div>
                                 )
                             })}
                         </div>
                     </div>
                     <div className={`${customCart.details ? 'block' : 'hidden'}`}>
-                        <h2 className='text-white font-bold text-xl mt-5'>Detalhes</h2>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5'>Detalhes</h2>
                         <p className="text-base text-(--c16) text-left cursor-default">
                         {customCart.details ? customCart.details.join(", ") : ''}
                         </p>
                     </div>
 
                     <div className={`${customCart.description ? 'block' : 'hidden'}`}>
-                        <h2 className='text-white font-bold text-xl mt-5'>Descrição</h2>
+                        <h2 className='dark:text-white text-(--c27) font-bold text-xl mt-5'>Descrição</h2>
                         <p className="text-base text-(--c16) text-left cursor-default">
                         {customCart.description ? customCart.description : ''}
                         </p>
                     </div>
 
-                    <div className="mt-6 mb-4 h-[2px] w-[100%] bg-(--c12) rounded-full cursor-default"></div>
+                    <div className="mt-6 mb-4 h-[2px] w-full dark:bg-(--c12) bg-(--c25) rounded-full cursor-default"></div>
 
                     <div className="grid grid-cols-2">
-                      <p className="text-base text-white text-left cursor-default w-[15rem] font-bold">
+                      <p className="text-base dark:text-white text-(--c27) text-left cursor-default w-[15rem] font-bold">
                         Preço base
                       </p>
                       <p className={`${customCart.base?.name ? 'text-(--c16)' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto mr-0 ml-auto'} text-base text-[#777777] text-right cursor-default font-bold`}>
@@ -175,7 +175,7 @@ function CustomPack({moveStep}) {
                     </div>
 
                     <div className="grid grid-cols-2 mt-1">
-                      <p className="text-base text-white text-left cursor-default w-[15rem] font-bold">
+                      <p className="text-base dark:text-white text-(--c27) text-left cursor-default w-[15rem] font-bold">
                         Taxa de customização
                       </p>
                       <p className={`${customCart.base ? '' : 'h-3 bg-(--c10) animate-pulse rounded-md w-48 mb-auto mt-auto mr-0 ml-auto'} text-base text-[#777777] text-right cursor-default font-bold`}>
@@ -184,7 +184,7 @@ function CustomPack({moveStep}) {
                     </div>
 
                     <div className={`${customCart.package ? 'block' : 'hidden'} grid grid-cols-2 mt-1`}>
-                      <p className="text-base text-white text-left cursor-default w-[15rem] font-bold">
+                      <p className="text-base dark:text-white text-(--c27) text-left cursor-default w-[15rem] font-bold">
                         Upgrade de pacote
                       </p>
                       <p className="text-base text-[#777777] text-right cursor-default font-bold">
@@ -192,7 +192,7 @@ function CustomPack({moveStep}) {
                       </p>
                     </div>
 
-                    <div className="mt-4 mb-4 h-[2px] w-[100%] bg-(--c12) rounded-full"></div>
+                    <div className="mt-4 mb-4 h-[2px] w-full dark:bg-(--c12) bg-(--c25) rounded-full"></div>
 
                     <div className="grid grid-cols-2 mt-1">
                       <p className="text-lg text-(--c4) text-left cursor-default w-[15rem] font-bold">
@@ -204,33 +204,33 @@ function CustomPack({moveStep}) {
                     </div>
 
                     <div className="grid grid-cols-2 mt-1">
-                      <p className="text-base text-white text-left cursor-default w-[15rem] font-bold">
+                      <p className="text-base dark:text-white text-(--c27) text-left cursor-default w-[15rem] font-bold">
                         Quantidade de pacotes
                       </p>
                       <div className="flex items-center gap-3 justify-end">
                         <button onClick={()=>{decreaseQuantity()}} className="flex items-center justify-center w-7 h-7 
-                        rounded-md bg-(--c9) border-(--c12) border-2 text-white text-lg font-bold cursor-pointer transition duration-200
+                        rounded-md bg-transparent dark:border-(--c12) border-(--c25) border-2 dark:text-white text-(--c27) text-lg font-bold cursor-pointer transition duration-200
                         hover:scale-105">
-                          <Minus className="text-(--c17)" size={17}/>
+                          <Minus className="dark:text-(--c17) text-(--c15)" size={17}/>
                         </button>
-                        <span className="text-white font-medium cursor-default">{quantity}</span>
+                        <span className="dark:text-white text-(--c27) font-medium cursor-default">{quantity}</span>
                         <button onClick={()=>{encreaseQuantity()}} className="flex items-center justify-center w-7 h-7
-                        rounded-md bg-(--c9) border-(--c12) border-2 text-white text-lg font-bold cursor-pointer transition duration-200 
+                        rounded-md bg-transparent dark:border-(--c12) border-(--c25) border-2 dark:text-white text-(--c27) text-lg font-bold cursor-pointer transition duration-200 
                         hover:scale-105">
-                          <Plus className="text-(--c17)" size={17}/>
+                          <Plus className="dark:text-(--c17) text-(--c15)" size={17}/>
                         </button>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 mt-7">
-                      <h2 className='text-white font-bold text-xl cursor-default'>Total da compra</h2>
-                      <p className={`${customCart.base ? '' : 'h-3 bg-(--c8) animate-pulse rounded-md w-48 mb-auto mt-auto mr-0 ml-auto'} text-xl text-(--c7) text-right cursor-default font-bold`}>
+                      <h2 className='dark:text-white text-(--c27) font-bold text-xl cursor-default'>Total da compra</h2>
+                      <p className={`${customCart.base ? '' : 'h-3 bg-(--c8) animate-pulse rounded-md w-48 mb-auto mt-auto mr-0 ml-auto'} text-xl dark:text-(--c7) text-(--c2) text-right cursor-default font-bold`}>
                         {`${customCart.base ? `R$${(packPrice * quantity).toFixed(2)}` : ''}`}
                       </p>
                     </div>
 
-                    <button onClick={()=>{location.pathname="/carrinho"}} className='w-[100%] h-[2.3rem] text-white font-bold cursor-pointer mt-7
-                      bg-(--c12) border-1 border-(--c12) rounded-md transition duration-200 hover:scale-102 hover:bg-(--c25)'>Adicionar ao carrinho</button>
+                    <button onClick={()=>{location.pathname="/carrinho"}} className='w-full h-[2.3rem] text-white font-bold cursor-pointer mt-7
+                      bg-(--c12) border-1 dark:border-(--c12) border-(--c25) rounded-md transition duration-200 hover:scale-102 hover:bg-(--c25)'>Adicionar ao carrinho</button>
                   </div>
               </div>
             </section>

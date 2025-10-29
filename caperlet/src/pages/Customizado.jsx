@@ -21,7 +21,7 @@ function Customizado() {
     return(
       <div className="min-h-screen flex flex-col montserrat-f">        
         <main className="flex-1 flex flex-col">
-            <section className="relative flex flex-col items-center bg-linear-to-br from-(--c1) dark:from-(--c27) from-50% to-(--c2) dark:to-(--c30) p-30 w-[100%]">
+            <section className="relative flex flex-col items-center bg-linear-to-br from-(--c1) dark:from-(--c27) from-50% to-(--c2) dark:to-(--c30) p-30 w-full">
                 <div className="flex flex-row gap-x-[2rem]">
                     <span onClick={()=>{window.location="/loja"}} className="flex items-center justify-center text-base px-6 py-1.5 bg-[rgba(152,92,240,0.1)]
                     text-(--c8) rounded-3xl cursor-pointer gap-x-[0.5rem] font-medium">
@@ -41,7 +41,7 @@ function Customizado() {
                 </p>
                 <CaminhoCustom currentStep={currentStep} moveStep={goToStep}/>
             </section>
-            <section className="bg-(--c3) p-15 flex w-[100%]">
+            <section className="dark:bg-(--c3) bg-(--c24) p-15 flex w-full">
               {steps[currentStep] === "CustomBase" && <CustomBase moveStep={goToStep} />}
               {steps[currentStep] === "CustomFlavor" && <CustomFlavor moveStep={goToStep} />}
               {steps[currentStep] === "CustomColor" && <CustomColor moveStep={goToStep} />}

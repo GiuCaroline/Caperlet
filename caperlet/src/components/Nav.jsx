@@ -3,9 +3,10 @@ import { Sun, Moon, LogIn } from "lucide-react"
 import { Handbag } from "phosphor-react"
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react';
-import { AArrowUp, AArrowDown, Contrast, Eclipse, Hand } from 'lucide-react';
+import { Menu, AArrowUp, AArrowDown, Eclipse, Hand } from 'lucide-react';
 
 function Nav({darkMode, isDark}) {
+  const [open, setOpen] = useState(false);
   const location = useLocation();
   const [isLogged, setIsLogged] = useState(false);
   let shadowClass = "";
@@ -90,25 +91,31 @@ function Nav({darkMode, isDark}) {
           </button>
           <Handbag onClick={()=>{window.location="/carrinho"}} className="dark:text-white text-(--c27) cursor-pointer" size={23}/>
             
-          <button id="libras">
-            <Hand />
-          </button> 
+           <div className="relative">
+              <button
+                onClick={() => setOpen(!open)}
+                className="p-2 rounded-md  transition cursor-pointer dark:text-white text-(--c27)"
+              >
+                <Menu />
+              </button>
 
-          <button id="aumentar-texto">
-            <AArrowUp  />
-          </button>
+              {open && (
+                <div className="absolute right-0 mt-2 w-48 dark:bg-(--c3) bg-(--c24) border dark:border-(--c12) border-(--c25) rounded-md shadow-lg p-2 flex flex-col gap-2 z-50">
 
-          <button id="diminuir-texto">
-            <AArrowDown />
-          </button>
+                  <button id="aumentar-texto" className="cursor-pointer p-2 rounded hover:dark:bg-(--c12) hover:bg-(--c25) flex items-center gap-2 dark:text-white text-(--c27)">
+                    <AArrowUp size={18}/> Aumentar texto
+                  </button>
 
-          <button id="alternar-contraste">
-            <Contrast  />
-          </button>
+                  <button id="diminuir-texto" className="cursor-pointer p-2 rounded hover:dark:bg-(--c12) hover:bg-(--c25) flex items-center gap-2 dark:text-white text-(--c27)">
+                    <AArrowDown size={18}/> Diminuir texto
+                  </button>
 
-          <button id="preto-e-branco">
-            <Eclipse  />
-          </button>
+                  <button id="preto-e-branco" className="cursor-pointer p-2 rounded hover:dark:bg-(--c12) hover:bg-(--c25) flex items-center gap-2 dark:text-white text-(--c27)">
+                    <Eclipse size={18}/> Preto & Branco
+                  </button>
+                </div>
+              )}
+            </div>
 
         </div>
     </nav>

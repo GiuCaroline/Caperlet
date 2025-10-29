@@ -105,7 +105,7 @@ function Pagamento() {
 
                             </div>
                         </div>
-                    </div>   
+                       
 
                         <div className="p-8 rounded-xl border border-(--c10) bg-transparent w-[100%]">
                             <div className="flex flex-col">
@@ -184,7 +184,7 @@ function Pagamento() {
 
                             </div>
                         </div>
-
+                    </div>
                     <div className='w-[50%] ml-[5%]'>
                         <div className="p-8 rounded-xl border dark:border-(--c10) border-(--c25) bg-transparent w-full">
                             <h1 className="text-3xl font-bold mb-3 dark:text-white text-(--c27) text-left cursor-default">Resumo do pedido</h1>
@@ -240,7 +240,7 @@ function Pagamento() {
                             </div>
 
                             <div className='flex items-center flex-col'>
-                                <button className='cursor-pointer bg-(--c23) text-white text-xl rounded-lg w-full py-2 font-semibold mt-[2%]'>Finalizar pedido</button>
+                                <button className='cursor-pointer bg-(--c8) text-white text-xl rounded-lg w-full py-2 font-semibold mt-[2%]'>Finalizar pedido</button>
                                 <p className='cursor-default dark:text-white text-(--c27) text-[11px] font-light flex items-end mt-[1%]'>
                                     <Shield className='dark:text-white text-(--c27)' size={18}/>Suas informações de pagamento são encripitadas como forma de segurança</p>
                             </div>

@@ -15,7 +15,7 @@ function CadasProd(){
         setPreview(url);
     }
     return(
-        <main className="flex-1 flex p-15 px-25 flex-col dark:bg-(--c3) bg-(--c24) montserrat-f">
+        <main className="flex-1 flex p-15 px-25 flex-col dark:bg-(--c3) bg-(--c24) montserrat-f md:pb-[15%]">
             <div  onClick={()=>{window.history.back()}} className='text-(--c20) flex items-center gap-2 cursor-pointer w-[15%] transition duration-300 transform-cpu hover:text-(--c16)'>
                 <ArrowLeft />
                 <p>Continuar gerenciando</p>

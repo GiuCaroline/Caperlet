@@ -37,7 +37,7 @@ function LojaPadrao() {
 
     return(
       <div className={`${candies.length > 0 && 'min-h-screen'} flex flex-col montserrat-f`}>     
-        <main className="flex-1 flex flex-col min-h-[100%]">
+        <main className="flex-1 flex flex-col min-h-full">
             <section className="flex flex-col items-center bg-linear-to-br from-(--c1)  dark:from-(--c27) from-50% to-(--c2) dark:to-(--c30) p-30 pb-15 w-full">
                 <div className="flex flex-row gap-x-[2rem]">
                     <span className="flex items-center justify-center text-base px-6 py-1.5 bg-(--c4) 

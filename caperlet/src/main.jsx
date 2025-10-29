@@ -28,36 +28,58 @@ createRoot(document.getElementById('root')).render(
 )
 function App() {
    useEffect(() => {
-    // AUMENTAR / DIMINUIR FONTE
-    const body = document.body;
     let fontSize = 100;
+    const MIN = 50;
+    const MAX = 200;
+
     const changeSize = (delta) => {
-      fontSize += delta;
-      body.style.fontSize = fontSize + "%";
+      fontSize = Math.min(MAX, Math.max(MIN, fontSize + delta));
+      document.documentElement.style.fontSize = fontSize + "%";
     };
 
-    const btnUp = document.getElementById("aumentar-texto");
-    const btnDown = document.getElementById("diminuir-texto");
-    if(btnUp) btnUp.addEventListener("click", () => changeSize(10));
-    if(btnDown) btnDown.addEventListener("click", () => changeSize(-10));
+    const resetSize = () => {
+      fontSize = 100;
+      document.documentElement.style.fontSize = fontSize + "%";
+    };
 
+    const onDocClick = (e) => {
+      const btn = e.target.closest("#aumentar-texto, #diminuir-texto, #preto-e-branco");
+      if (!btn) return;
 
-    // ALTO CONTRASTE
-    const contraste = document.getElementById("alternar-contraste");
-    if(contraste) contraste.addEventListener("click", () => {
-      body.classList.toggle("alto-contraste");
-    });
+      if (btn.id === "aumentar-texto") {
+        changeSize(10);
+        return;
+      }
+      if (btn.id === "diminuir-texto") {
+        changeSize(-10);
+        return;
+      }
+      if (btn.id === "preto-e-branco") {
+        document.body.classList.toggle("preto-e-branco");
+        return;
+      }
+    };
 
-    // PRETO E BRANCO
-    const pb = document.getElementById("preto-e-branco");
-    if(pb) pb.addEventListener("click", () => {
-      body.classList.toggle("preto-e-branco");
-    });
+    document.addEventListener("click", onDocClick);
 
-    // VLibras
-    if (window.VLibras) {
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    const saved = localStorage.getItem("appFontSize");
+    if (saved) {
+      fontSize = Number(saved);
+      document.documentElement.style.fontSize = fontSize + "%";
     }
+
+    const saveFontSize = () => localStorage.setItem("appFontSize", String(fontSize));
+
+    const observer = new MutationObserver(saveFontSize);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["style"] });
+
+
+    return () => {
+      document.removeEventListener("click", onDocClick);
+      observer.disconnect();
+    };
+
+  
   }, []);
 
   const [darkMode, setDarkMode] = useState(Boolean(localStorage.getItem('darkMode')) || false)

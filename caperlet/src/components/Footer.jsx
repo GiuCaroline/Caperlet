@@ -4,7 +4,8 @@ import { TelegramLogo, WhatsappLogo } from 'phosphor-react'
 
 function Footer(){
     return(
-        <footer id="footer" className="dark:bg-(--c3) bg-(--c24) dark:text-white text-(--c27) flex flex-row justify-between p-10 montserrat-f">
+        <footer id="footer" className="dark:bg-(--c3) bg-(--c24) dark:text-white text-(--c27) flex flex-row justify-between p-10 montserrat-f
+         border-t-1 dark:border-(--c10) border-(--c17)">
             <section>
                 <h1 className="text-4xl font-extrabold cursor-default">
                     <span className="text-(--c4)">CA</span>
@@ -21,7 +22,6 @@ function Footer(){
                     <li className='text-(--c16) cursor-pointer hover:text-(--c4)'><a href='/loja'>Nossa vitrine</a></li>
                     <li className='text-(--c16) cursor-pointer hover:text-(--c4)'><a href='/customizado '>Faça seu doce</a></li>
                     <li className='text-(--c16) cursor-pointer hover:text-(--c4)'><a href=''>Sobre nós</a></li>
-                    <li className='text-(--c16) cursor-pointer hover:text-(--c4)'><a href=''>Nosso blog</a></li>
                 </div>
             </section>
             <section className='flex flex-col gap-3 items-center'>
