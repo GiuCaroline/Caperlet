@@ -29,7 +29,7 @@ O site busca:
 
 ## 🚀 Funcionalidades (em desenvolvimento)
 
-- [ ] Layout responsivo
+- [x] Layout responsivo
 - [x] Catálogo de produtos
 - [x] Página de personalização de doces
 - [x] Sistema de pedidos online
@@ -40,13 +40,8 @@ O site busca:
 
 ## 💡 Melhorias Futuras
 
-- Implementar carrinho de compras e checkout;
-- Adicionar filtro por categoria (bolos, doces, presentes);
-- Criar painel administrativo simples para cadastrar produtos.
-- Layout responsivo
 - Integração com Instagram
 - Blog
-- Acessibilidade no site
 
 ---
 
