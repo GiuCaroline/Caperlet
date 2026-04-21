@@ -1,18 +1,20 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode, useState, Suspense, lazy } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css'
 import Nav from './components/Nav.jsx'
 import Footer from './components/Footer.jsx'
-import Home from './pages/Home.jsx'
-import Login from "./pages/Login.jsx"
-import Cadastro from "./pages/Cadastro.jsx"
-import LojaPadrao from "./pages/LojaPadrao.jsx"
-import Customizado from "./pages/Customizado.jsx"
-import Carrinho from "./pages/Carrinho.jsx"
-import Pagamento from "./pages/Pagamento.jsx"
-import CadasProd from "./pages/CadasProd.jsx"
 import { useEffect } from "react";
+
+// Lazy load pages
+const Home = lazy(() => import('./pages/Home.jsx'));
+const Login = lazy(() => import('./pages/Login.jsx'));
+const Cadastro = lazy(() => import('./pages/Cadastro.jsx'));
+const LojaPadrao = lazy(() => import('./pages/LojaPadrao.jsx'));
+const Customizado = lazy(() => import('./pages/Customizado.jsx'));
+const Carrinho = lazy(() => import('./pages/Carrinho.jsx'));
+const Pagamento = lazy(() => import('./pages/Pagamento.jsx'));
+const CadasProd = lazy(() => import('./pages/CadasProd.jsx'));
 
 const hideNavPages = ["/login", "/cadastro"];
 const showNav = !hideNavPages.includes(location.pathname);
@@ -93,16 +95,18 @@ function App() {
     <Router>
       <div className={`${darkMode && 'dark'}`}>
         {showNav && <Nav darkMode={toggleDarkMode} isDark={darkMode} />}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/loja" element={<LojaPadrao />} />
-          <Route path="/customizado" element={<Customizado />} />
-          <Route path="/carrinho" element={<Carrinho />} />
-          <Route path="/pagamento" element={<Pagamento />} />
-          <Route path="/cadastroProduto" element={<CadasProd />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<Cadastro />} />
+            <Route path="/loja" element={<LojaPadrao />} />
+            <Route path="/customizado" element={<Customizado />} />
+            <Route path="/carrinho" element={<Carrinho />} />
+            <Route path="/pagamento" element={<Pagamento />} />
+            <Route path="/cadastroProduto" element={<CadasProd />} />
+          </Routes>
+        </Suspense>
         {showFooter && <Footer />}
       </div>
     </Router>
