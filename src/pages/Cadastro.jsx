@@ -11,8 +11,8 @@ function Cadastro() {
             const name = e.target.name.value;
             const phone = e.target.phone.value;
             const email = e.target.email.value;
-            const senha = e.target.password.value;
-            const user = await register(name, email, phone, senha);
+            const password = e.target.password.value;
+            const user = await register(name, email, phone, password);
             if (user) location.href = "/login";
         } 
 
@@ -39,7 +39,7 @@ function Cadastro() {
                         <Phone className="text-(--c4)" size={25} />
                         <input 
                             name='phone'
-                            type="tel" 
+                            type="text" 
                             placeholder="Telefone" 
                             className="bg-transparent outline-none w-full text-(--c4) placeholder:text-(--c4) placeholder:opacity-70 "
                         />

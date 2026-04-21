@@ -12,6 +12,7 @@ export function useCandies() {
     try {
       const data = await apiRequest("/products/candies", "GET");
       if (!data.success) throw new Error(data.message);
+      console.log(data)
       setCandies(data.candies);
       return data.candies;
     } catch (err) {

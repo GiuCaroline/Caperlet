@@ -17,7 +17,7 @@ function LojaPadrao() {
             const { id, name, descript, price, image, package_size, package_price } = candy;
             return { id, name, descript, price, image, package_size, package_price };
           }).filter(candy => candy.name.toLowerCase().includes(searchText.toLowerCase()) || candy.descript.toLowerCase().includes(searchText.toLowerCase()));
-          setCandies(candies);
+          setCandies(candies); 
         }
       };
       carregaDoces();
