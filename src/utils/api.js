@@ -1,4 +1,4 @@
-const API_URL = 'https://api-caperlet.onrender.com/api';
+const API_URL = process.env.VITE_API_URL;
 
 // Função original apiRequest para manter compatibilidade
 export async function apiRequest(endpoint, method = "GET", data = null) {
